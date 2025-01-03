@@ -1,0 +1,110 @@
+version: 1
+project:
+  title: A First Course in Quantitative Economics with Python
+  authors:
+    - name: Thomas J. Sargent
+      url: http://www.tomsargent.com
+    - name: John Stachurski
+      url: https://johnstachurski.net
+  bibliography:
+    - _static/quant-econ.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/quantecon-python-intro.pdf
+  toc:
+    - file: intro.md
+    - title: Introduction
+      children:
+        - file: about.md
+    - title: Economic Data
+      children:
+        - file: long_run_growth.md
+        - file: business_cycle.md
+        - file: inflation_history.md
+        - file: french_rev.md
+        - file: inequality.md
+    - title: Foundations
+      children:
+        - file: intro_supply_demand.md
+        - file: linear_equations.md
+        - file: complex_and_trig.md
+        - file: geom_series.md
+    - title: 'Linear Dynamics: Finite Horizons'
+      children:
+        - file: pv.md
+        - file: cons_smooth.md
+        - file: equalizing_difference.md
+        - file: cagan_ree.md
+        - file: cagan_adaptive.md
+    - title: 'Linear Dynamics: Infinite Horizons'
+      children:
+        - file: eigen_I.md
+        - file: greek_square.md
+    - title: Probability and Distributions
+      children:
+        - file: prob_dist.md
+        - file: lln_clt.md
+        - file: monte_carlo.md
+        - file: heavy_tails.md
+        - file: schelling.md
+    - title: Nonlinear Dynamics
+      children:
+        - file: scalar_dynam.md
+        - file: solow.md
+        - file: cobweb.md
+        - file: olg.md
+        - file: commod_price.md
+    - title: Monetary-Fiscal Policy Interactions
+      children:
+        - file: money_inflation.md
+        - file: unpleasant.md
+        - file: money_inflation_nonlinear.md
+        - file: laffer_adaptive.md
+    - title: Stochastic Dynamics
+      children:
+        - file: ar1_processes.md
+        - file: markov_chains_I.md
+        - file: markov_chains_II.md
+        - file: time_series_with_matrices.md
+    - title: Optimization
+      children:
+        - file: lp_intro.md
+        - file: short_path.md
+    - title: Modeling in Higher Dimensions
+      children:
+        - file: eigen_II.md
+        - file: input_output.md
+        - file: lake_model.md
+        - file: networks.md
+    - title: Markets and Competitive Equilibrium
+      children:
+        - file: supply_demand_multiple_goods.md
+        - file: supply_demand_heterogeneity.md
+    - title: Estimation
+      children:
+        - file: simple_linear_regression.md
+        - file: mle.md
+    - title: Other
+      children:
+        - file: troubleshooting.md
+        - file: zreferences.md
+        - file: status.md
+  abbreviations:
+    USA: United States
+    GBR: United Kingdom
+    CHN: China
+    GDP: Gross Domestic Products
+  numbering:
+    headings: true
+    figure:
+      template: Fig. %s
+  settings:
+    output_stderr: remove
+  error_rules:
+    - rule: reference-syntax-valid
+      severity: ignore
+site:
+  options:
+    logo: _static/qe-logo.png
+  template: book-theme

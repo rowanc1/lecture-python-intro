@@ -15,7 +15,7 @@ kernelspec:
 
 ## Overview
 
-In the lecture {doc}`long_run_growth` we studied how GDP per capita has changed
+In the lecture [](long_run_growth.md) we studied how GDP per capita has changed
 for certain countries and regions.
 
 Per capita GDP is important because it gives us an idea of average income for
@@ -214,12 +214,9 @@ a sample of households, then the dashed lines show that the bottom 80\% of
 households own just over 40\% of total wealth.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Lorenz curve of simulated wealth data
-    name: lorenz_simulated
----
+:label: lorenz_simulated
+:caption: Lorenz curve of simulated wealth data
+
 n = 2000
 sample = np.exp(np.random.randn(n))
 
@@ -314,14 +311,9 @@ Total income is the sum of households' all income sources, including labor incom
 (All income measures are pre-tax.)
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: 2016 US Lorenz curves
-    name: lorenz_us
-  image:
-    alt: lorenz_us
----
+:label: lorenz_us
+:caption: 2016 US Lorenz curves
+
 fig, ax = plt.subplots()
 ax.plot(f_vals_nw[-1], l_vals_nw[-1], label=f'net wealth')
 ax.plot(f_vals_ti[-1], l_vals_ti[-1], label=f'total income')
@@ -375,12 +367,9 @@ equality and the Lorenz curve (e.g., the shaded area in {numref}`lorenz_gini`).
 The idea is that $G=0$ indicates complete equality, while $G=1$ indicates complete inequality.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Gini coefficient (simulated wealth data)
-    name: lorenz_gini
----
+:label: lorenz_gini
+:caption: Gini coefficient (simulated wealth data)
+
 fig, ax = plt.subplots()
 f_vals, l_vals = lorenz_curve(sample)
 ax.plot(f_vals, l_vals, label=f'lognormal sample', lw=2)
@@ -405,12 +394,9 @@ where $A$ is the area between the 45-degree line of
 perfect equality and the Lorenz curve, while $B$ is the area below the Lorenze curve -- see {numref}`lorenz_gini2`. 
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Lorenz curve and Gini coefficient
-    name: lorenz_gini2
----
+:label: lorenz_gini2
+:caption: Lorenz curve and Gini coefficient
+
 fig, ax = plt.subplots()
 f_vals, l_vals = lorenz_curve(sample)
 ax.plot(f_vals, l_vals, label='lognormal sample', lw=2)
@@ -513,12 +499,9 @@ def plot_inequality_measures(x, y, legend, xlabel, ylabel):
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Gini coefficients of simulated data
-    name: gini_simulated
----
+:label: gini_simulated
+:caption: Gini coefficients of simulated data
+
 fix, ax = plot_inequality_measures(σ_vals, 
                                   ginis, 
                                   'simulated', 
@@ -549,12 +532,9 @@ We now know the series ID is `SI.POV.GINI`.
 To get a quick overview, let's histogram Gini coefficients across all countries and all years in the World Bank dataset. 
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Histogram of Gini coefficients across countries
-    name: gini_histogram
----
+:label: gini_histogram
+:caption: Histogram of Gini coefficients across countries
+
 # Fetch gini data for all countries
 gini_all = wb.data.DataFrame("SI.POV.GINI")
 # remove 'YR' in index and convert to integer
@@ -592,12 +572,9 @@ data_usa = data['USA']  # pd.Series of US data
 Let us take a look at the data for the US.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Gini coefficients for income distribution (USA)
-    name: gini_usa1
----
+:label: gini_usa1
+:caption: Gini coefficients for income distribution (USA)
+
 fig, ax = plt.subplots()
 ax = data_usa.plot(ax=ax)
 ax.set_ylim(data_usa.min()-1, data_usa.max()+1)
@@ -634,12 +611,9 @@ ginis.head(n=5)
 Let's plot the Gini coefficients for net wealth.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Gini coefficients of US net wealth
-    name: gini_wealth_us
----
+:label: gini_wealth_us
+:caption: Gini coefficients of US net wealth
+
 fig, ax = plt.subplots()
 ax.plot(years, ginis["n_wealth"], marker='o')
 ax.set_xlabel("year")
@@ -672,12 +646,9 @@ There are 167 countries represented in this dataset.
 Let us compare three advanced economies: the US, the UK, and Norway
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Gini coefficients for income (USA, United Kingdom, and Norway)
-    name: gini_usa_gbr_nor1
----
+:label: gini_usa_gbr_nor1
+:caption: Gini coefficients for income (USA, United Kingdom, and Norway)
+
 ax = data[['USA','GBR', 'NOR']].plot()
 ax.set_xlabel('year')
 ax.set_ylabel('Gini coefficient')
@@ -698,12 +669,9 @@ The data for Norway in this dataset goes back to 1979 but there are gaps in the 
 We can use the `.ffill()` method to copy and bring forward the last known value in a series to fill in these gaps
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Gini coefficients for income (USA, United Kingdom, and Norway)
-    name: gini_usa_gbr_nor2
----
+:label: gini_usa_gbr_nor2
+:caption: Gini coefficients for income (USA, United Kingdom, and Norway)
+
 data['NOR'] = data['NOR'].ffill()
 ax = data[['USA','GBR', 'NOR']].plot()
 ax.set_xlabel('year')
@@ -874,12 +842,9 @@ df_topshares = df5[['year', 'topshare_n_wealth',
 Then let's plot the top shares.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: US top shares
-    name: top_shares_us
----
+:label: top_shares_us
+:caption: US top shares
+
 fig, ax = plt.subplots()
 ax.plot(years, df_topshares["topshare_l_income"],
         marker='o', label="labor income")
@@ -951,14 +916,9 @@ for σ in σ_vals:
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Top shares of simulated data
-    name: top_shares_simulated
-  image:
-    alt: top_shares_simulated
----
+:label: top_shares_simulated
+:caption: Top shares of simulated data
+
 fig, ax = plot_inequality_measures(σ_vals, 
                                   topshares, 
                                   "simulated data", 
@@ -968,14 +928,9 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Gini coefficients of simulated data
-    name: gini_coef_simulated
-  image:
-    alt: gini_coef_simulated
----
+:label: gini_coef_simulated
+:caption: Gini coefficients of simulated data
+
 fig, ax = plot_inequality_measures(σ_vals, 
                                   ginis, 
                                   "simulated data", 
@@ -985,14 +940,9 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Lorenz curves for simulated data
-    name: lorenz_curve_simulated
-  image:
-    alt: lorenz_curve_simulated
----
+:label: lorenz_curve_simulated
+:caption: Lorenz curves for simulated data
+
 fig, ax = plt.subplots()
 ax.plot([0,1],[0,1], label=f"equality")
 for i in range(len(f_vals)):
@@ -1035,14 +985,9 @@ for f_val, l_val in zip(f_vals_nw, l_vals_nw):
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: 'US top shares: approximation vs Lorenz'
-    name: top_shares_us_al
-  image:
-    alt: top_shares_us_al
----
+:label: top_shares_us_al
+:caption: US top shares: approximation vs Lorenz
+
 fig, ax = plt.subplots()
 
 ax.plot(years, df_topshares["topshare_n_wealth"], marker='o',\

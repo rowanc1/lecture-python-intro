@@ -53,7 +53,7 @@ why they should be -- central to economic analysis.
 
 ### Introduction: light tails
 
-Most {doc}`commonly used probability distributions <prob_dist>` in classical statistics and
+Most [commonly used probability distributions](prob_dist.md) in classical statistics and
 the natural sciences have "light tails."
 
 To explain this concept, let's look first at examples.
@@ -82,12 +82,9 @@ We can see this when we plot the density and show a histogram of observations,
 as with the following code (which assumes $\mu=0$ and $\sigma=1$).
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Histogram of observations
-    name: hist-obs
----
+:label: hist-obs
+:caption: Histogram of observations
+
 fig, ax = plt.subplots()
 X = norm.rvs(size=1_000_000)
 ax.hist(X, bins=40, alpha=0.4, label='histogram', density=True)
@@ -111,12 +108,9 @@ X.min(), X.max()
 Here's another view of draws from the same distribution:
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Histogram of observations
-    name: hist-obs2
----
+:label: hist-obs2
+:caption: Histogram of observations
+
 n = 2000
 fig, ax = plt.subplots()
 data = norm.rvs(size=n)
@@ -191,12 +185,9 @@ data = yf.download('AMZN', '2015-1-1', '2022-7-1')
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Daily Amazon returns
-    name: dailyreturns-amzn
----
+:label: dailyreturns-amzn
+:caption: Daily Amazon returns
+
 s = data['Adj Close']
 r = s.pct_change()
 
@@ -223,12 +214,9 @@ data = yf.download('BTC-USD', '2015-1-1', '2022-7-1')
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Daily Bitcoin returns
-    name: dailyreturns-btc
----
+:label: dailyreturns-btc
+:caption: Daily Bitcoin returns
+
 s = data['Adj Close']
 r = s.pct_change()
 
@@ -246,12 +234,9 @@ The histogram also looks different to the histogram of the normal
 distribution:
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Histogram (normal vs bitcoin returns)
-    name: hist-normal-btc
----
+:label: hist-normal-btc
+:caption: Histogram (normal vs bitcoin returns)
+
 r = np.random.standard_t(df=5, size=1000)
 
 fig, ax = plt.subplots()
@@ -341,12 +326,9 @@ distribution](https://en.wikipedia.org/wiki/Cauchy_distribution), which is
 heavy-tailed.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Draws from normal and Cauchy distributions
-    name: draws-normal-cauchy
----
+:label: draws-normal-cauchy
+:caption: Draws from normal and Cauchy distributions
+
 n = 120
 np.random.seed(11)
 
@@ -392,20 +374,17 @@ This is typical of a heavy-tailed distribution.
 
 Let's compare some distributions that only take nonnegative values.
 
-One is the exponential distribution, which we discussed in {doc}`our lecture
-on probability and distributions <prob_dist>`.
+One is the exponential distribution, which we discussed in [our lecture
+on probability and distributions](prob_dist.md).
 
 The exponential distribution is a light-tailed distribution.
 
 Here are some draws from the exponential distribution.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Draws of exponential distribution
-    name: draws-exponential
----
+:label: draws-exponential
+:caption: Draws of exponential distribution
+
 n = 120
 np.random.seed(11)
 
@@ -457,12 +436,9 @@ Here are some draws from the Pareto distribution with tail index $1$ and minimum
 $1$.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Draws from Pareto distribution
-    name: draws-pareto
----
+:label: draws-pareto
+:caption: Draws from Pareto distribution
+
 n = 120
 np.random.seed(11)
 
@@ -538,12 +514,9 @@ $$
 Here's a plot that illustrates how $G_E$ goes to zero faster than $G_P$.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Pareto and exponential distribution comparison
-    name: compare-pareto-exponential
----
+:label: compare-pareto-exponential
+:caption: Pareto and exponential distribution comparison
+
 x = np.linspace(1.5, 100, 1000)
 fig, ax = plt.subplots()
 alpha = 1.0
@@ -559,12 +532,9 @@ Here's a log-log plot of the same functions, which makes visual comparison
 easier.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Pareto and exponential distribution comparison (log-log)
-    name: compare-pareto-exponential-log-log
----
+:label: compare-pareto-exponential-log-log
+:caption: Pareto and exponential distribution comparison (log-log)
+
 fig, ax = plt.subplots()
 alpha = 1.0
 ax.loglog(x, np.exp(- alpha * x), label='exponential', alpha=0.8)
@@ -603,12 +573,9 @@ def eccdf(x, data):
 Here's a figure containing some empirical CCDFs from simulated data.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Empirical CCDFs
-    name: ccdf-empirics
----
+:label: ccdf-empirics
+:caption: Empirical CCDFs
+
 # Parameters and grid
 x_grid = np.linspace(1, 1000, 1000)
 sample_size = 1000
@@ -815,13 +782,10 @@ def extract_wb(varlist=['NY.GDP.MKTP.CD'],
 Here is a plot of the firm size distribution for the largest 500 firms in 2020 taken from Forbes Global 2000.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Firm size distribution
-    name: firm-size-dist
-tags: [hide-input]
----
+:label: firm-size-dist
+:caption: Firm size distribution
+:tags: hide-input
+
 df_fs = pd.read_csv('https://media.githubusercontent.com/media/QuantEcon/high_dim_data/main/cross_section/forbes-global2000.csv')
 df_fs = df_fs[['Country', 'Sales', 'Profits', 'Assets', 'Market Value']]
 fig, ax = plt.subplots(figsize=(6.4, 3.5))
@@ -841,13 +805,10 @@ Here are plots of the city size distribution for the US and Brazil in 2023 from 
 The size is measured by population.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: City size distribution
-    name: city-size-dist
-tags: [hide-input]
----
+:label: city-size-dist
+:caption: City size distribution
+:tags: hide-input
+
 # import population data of cities in 2023 United States and 2023 Brazil from world population review
 df_cs_us = pd.read_csv('https://media.githubusercontent.com/media/QuantEcon/high_dim_data/main/cross_section/cities_us.csv')
 df_cs_br = pd.read_csv('https://media.githubusercontent.com/media/QuantEcon/high_dim_data/main/cross_section/cities_brazil.csv')
@@ -867,13 +828,10 @@ Here is a plot of the upper tail (top 500) of the wealth distribution.
 The data is from the Forbes Billionaires list in 2020.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Wealth distribution (Forbes billionaires in 2020)
-    name: wealth-dist
-tags: [hide-input]
----
+:label: wealth-dist
+:caption: Wealth distribution (Forbes billionaires in 2020)
+:tags: hide-input
+
 df_w = pd.read_csv('https://media.githubusercontent.com/media/QuantEcon/high_dim_data/main/cross_section/forbes-billionaires.csv')
 df_w = df_w[['country', 'realTimeWorth', 'realTimeRank']].dropna()
 df_w = df_w.astype({'realTimeRank': int})
@@ -922,13 +880,10 @@ df_gdp1.dropna(inplace=True)
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP per capita distribution
-    name: gdppc-dist
-tags: [hide-input]
----
+:label: gdppc-dist
+:caption: GDP per capita distribution
+:tags: hide-input
+
 fig, axes = plt.subplots(1, 2, figsize=(8.8, 3.6))
 
 for name, ax in zip(variable_names, axes):
@@ -950,7 +905,7 @@ Averaging tends to eliminate extreme outcomes.
 One impact of heavy tails is that sample averages can be poor estimators of
 the underlying mean of the distribution.
 
-To understand this point better, recall {doc}`our earlier discussion <lln_clt>` 
+To understand this point better, recall [our earlier discussion](lln_clt.md) 
 of the law of large numbers, which considered IID $X_1, \ldots, X_n$ with common distribution $F$
 
 If $\mathbb E |X_i|$ is finite, then
@@ -973,12 +928,9 @@ Let's have a look at the behavior of the sample mean in this case, and see
 whether or not the LLN is still valid.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: LLN failure
-    name: fail-lln
----
+:label: fail-lln
+:caption: LLN failure
+
 from scipy.stats import cauchy
 
 np.random.seed(1234)
@@ -1069,7 +1021,7 @@ The heaviness of the tail in the wealth distribution matters for taxation and re
 The same is true for the income distribution.
 
 For example, the heaviness of the tail of the income distribution helps
-determine {doc}`how much revenue a given tax policy will raise <mle>`.
+determine [how much revenue a given tax policy will raise](mle.md).
 
 
 (cltail)=

@@ -16,7 +16,7 @@ kernelspec:
 ## Overview
 
 
-This lecture builds on concepts and issues introduced in {doc}`money_inflation`.
+This lecture builds on concepts and issues introduced in [](money_inflation.md).
 
 That lecture describes stationary equilibria that reveal a [*Laffer curve*](https://en.wikipedia.org/wiki/Laffer_curve) in the inflation tax rate and the associated  stationary rate of return 
 on currency.  
@@ -45,7 +45,7 @@ In addition to learning about "unpleasant monetarist arithmetic", in this lectur
 
 ## Setup
 
-Let's start with quick reminders of the model's components set out in {doc}`money_inflation`.
+Let's start with quick reminders of the model's components set out in [](money_inflation.md).
 
 Please consult that lecture for more details and Python code that we'll also use in this lecture.
 
@@ -77,7 +77,7 @@ where $\gamma_1 > \gamma_2 > 0$.
 
 ## Monetary-Fiscal Policy
 
-To the basic model of {doc}`money_inflation`, we add inflation-indexed one-period government bonds as an additional way for the government to finance government expenditures. 
+To the basic model of [](money_inflation.md), we add inflation-indexed one-period government bonds as an additional way for the government to finance government expenditures. 
 
 Let $\widetilde R > 1$ be a time-invariant gross real rate of return on government one-period inflation-indexed bonds.
 
@@ -160,7 +160,7 @@ By an **open market operation**, we mean a government monetary policy action in 
 ## Algorithm (basic idea)
 
 
-We work backwards from $t=T$ and first compute $p_T, R_u$ associated with the low-inflation, low-inflation-tax-rate stationary equilibrium in {doc}`money_inflation_nonlinear`.
+We work backwards from $t=T$ and first compute $p_T, R_u$ associated with the low-inflation, low-inflation-tax-rate stationary equilibrium in [](money_inflation_nonlinear.md).
 
 To start our description of our algorithm, it is useful to recall that a stationary rate of return
 on currency $\bar R$ solves the quadratic equation
@@ -171,7 +171,7 @@ $$ (eq:up_steadyquadratic)
 
 Quadratic equation {eq}`eq:up_steadyquadratic` has two roots, $R_l < R_u < 1$.
 
-For reasons described at the end of {doc}`money_inflation`, we select the larger root $R_u$. 
+For reasons described at the end of [](money_inflation.md), we select the larger root $R_u$. 
 
 
 Next, we compute
@@ -303,7 +303,7 @@ where $\theta \in [0,1)$ is a relaxation parameter.
 ## Example Calculations
 
 We'll set parameters of the model so that the steady state after time $T$ is initially the same
-as in {doc}`money_inflation_nonlinear`
+as in [](money_inflation_nonlinear.md)
 
 In particular, we set $\gamma_1=100, \gamma_2 =50, g=3.0$.  We set $m_0 = 100$ in that lecture,
 but now the counterpart will be $M_T$, which is endogenous.  
@@ -486,12 +486,9 @@ def plot_path(m0_arr, model, length=15):
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Unpleasant Arithmetic"
-    name: fig:unpl1
----
+:label: fig:unpl1
+:caption: Unpleasant Arithmetic
+
 plot_path([80, 100], msm)
 ```
 

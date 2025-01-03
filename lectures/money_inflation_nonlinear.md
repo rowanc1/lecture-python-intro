@@ -15,10 +15,10 @@ kernelspec:
 
 ## Overview
 
-We study stationary and dynamic *Laffer curves* in the inflation tax rate in a non-linear version of the model studied in {doc}`money_inflation`.
+We study stationary and dynamic *Laffer curves* in the inflation tax rate in a non-linear version of the model studied in [](money_inflation.md).
 
 We use the log-linear version of the demand function for money that  {cite}`Cagan`
-used in his classic paper in place of the linear demand function used in {doc}`money_inflation`. 
+used in his classic paper in place of the linear demand function used in [](money_inflation.md). 
 
 That change requires that we modify parts of our analysis.
 
@@ -26,7 +26,7 @@ In particular, our dynamic system is no longer linear in state variables.
 
 Nevertheless, the economic logic underlying an  analysis based on what we called ''method 2''  remains unchanged.  
 
-We shall discover qualitatively similar outcomes to those that we studied  in {doc}`money_inflation`.
+We shall discover qualitatively similar outcomes to those that we studied  in [](money_inflation.md).
 
 That lecture presented a linear version of the model in this lecture.  
 
@@ -37,7 +37,7 @@ As in that  lecture,  we discussed these topics:
 * perverse dynamics under rational expectations in which the system converges to the higher stationary inflation tax rate
 * a peculiar comparative stationary-state analysis connected with that stationary inflation rate that asserts that inflation can be *reduced* by running *higher*  government deficits 
 
-These outcomes will set the stage for the analysis of {doc}`laffer_adaptive` that studies a version of the present model that  uses a version of "adaptive expectations" instead of rational expectations.
+These outcomes will set the stage for the analysis of [](laffer_adaptive.md) that studies a version of the present model that  uses a version of "adaptive expectations" instead of rational expectations.
 
 That lecture will show that 
 
@@ -70,7 +70,7 @@ where $g$ is the part of government expenditures financed by printing money.
 
 ```{prf:remark}
 :label: linear_log
-Please notice that while equation {eq}`eq:mdemand` is linear in logs of the money supply and price level, equation {eq}`eq:msupply` is linear in levels. This will require adapting the equilibrium computation methods that we deployed in {doc}`money_inflation`.
+Please notice that while equation {eq}`eq:mdemand` is linear in logs of the money supply and price level, equation {eq}`eq:msupply` is linear in levels. This will require adapting the equilibrium computation methods that we deployed in [](money_inflation.md).
 ```
 
 
@@ -120,8 +120,6 @@ from matplotlib.ticker import MaxNLocator
 from scipy.optimize import fsolve 
 ```
 
-+++ {"user_expressions": []}
-
 Let's create a `namedtuple` to store the parameters of the model
 
 ```{code-cell} ipython3
@@ -137,8 +135,6 @@ def create_model(α=0.5, m0=np.log(100), g=0.35):
 
 model = create_model()
 ```
-
-+++ {"user_expressions": []}
 
 Now we write code that computes steady-state $\overline \pi$s.
 
@@ -164,13 +160,10 @@ We find two steady state $\overline \pi$ values.
 The following figure plots the steady state Laffer curve together with the two stationary inflation rates.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Seigniorage as function of steady state inflation. The dashed brown lines indicate $\pi_l$ and $\pi_u$.
-    name: laffer_curve_nonlinear
-    width: 500px
----
+:label: laffer_curve_nonlinear
+:caption: Seigniorage as function of steady state inflation. The dashed brown lines indicate $\pi_l$ and $\pi_u$.
+:width: 500px
+
 
 def compute_seign(x, α):
     return np.exp(-α * x) - np.exp(-(1 + α) * x) 
@@ -277,7 +270,7 @@ print('eq_g == g:', np.isclose(eq_g(m_seq[-1] - m_seq[-2]), model.g))
 
 ## Computing an Equilibrium Sequence 
 
-We'll deploy a method similar to *Method 2* used in {doc}`money_inflation`.  
+We'll deploy a method similar to *Method 2* used in [](money_inflation.md).  
 
 We'll take the time $t$ state vector to be the pair $(m_t, p_t)$.
 
@@ -338,7 +331,7 @@ the higher value
 
 ## Slippery Side of Laffer Curve Dynamics
 
-We are now equipped  to compute  time series starting from different $p_0$ settings, like those in {doc}`money_inflation`.
+We are now equipped  to compute  time series starting from different $p_0$ settings, like those in [](money_inflation.md).
 
 ```{code-cell} ipython3
 :tags: [hide-cell]
@@ -392,15 +385,10 @@ def draw_iterations(p0s, model, line_params, p0_bars, num_steps):
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Starting from different initial values of $p_0$, paths of $m_t$ (top
-      panel, log scale for $m$), $p_t$ (second panel, log scale for $p$),  $\pi_t$ (third panel), and $\mu_t$ (bottom
-      panel)
-    name: p0_path_nonlin
-    width: 500px
----
+:label: p0_path_nonlin
+:caption: Starting from different initial values of $p_0$, paths of $m_t$ (top panel, log scale for $m$), $p_t$ (second panel, log scale for $p$),  $\pi_t$ (third panel), and $\mu_t$ (bottom panel)
+:width: 500px
+
 
 # Generate a sequence from p0_l to p0_u
 p0s = np.arange(p0_l, p0_u, 0.1) 
@@ -423,7 +411,7 @@ Those dynamics are "perverse" not only in the sense that they imply that the mon
 * the figure indicates that inflation can be *reduced* by running *higher*  government deficits, i.e., by raising more resources through  printing money. 
 
 ```{note}
-The same qualitative outcomes prevail in {doc}`money_inflation` that studies a linear version of the model in this lecture.
+The same qualitative outcomes prevail in [](money_inflation.md) that studies a linear version of the model in this lecture.
 ```
 
 We discovered that 
@@ -431,9 +419,9 @@ We discovered that
 * all but one of the equilibrium paths converge to limits in which the higher of two possible stationary inflation tax prevails
 * there is a unique equilibrium path associated with "plausible" statements about how reductions in government deficits affect a stationary  inflation rate
 
-As in {doc}`money_inflation`,
+As in [](money_inflation.md),
 on grounds of plausibility, we  again recommend  selecting the unique equilibrium that converges to the lower stationary inflation tax rate. 
 
-As we shall see, we  accepting  this recommendation is a key ingredient of outcomes of the "unpleasant arithmetic" that we describe in {doc}`unpleasant`.
+As we shall see, we  accepting  this recommendation is a key ingredient of outcomes of the "unpleasant arithmetic" that we describe in [](unpleasant.md).
 
-In {doc}`laffer_adaptive`, we shall explore how  {cite}`bruno1990seigniorage` and others justified our equilibrium selection in other ways.
+In [](laffer_adaptive.md), we shall explore how  {cite}`bruno1990seigniorage` and others justified our equilibrium selection in other ways.

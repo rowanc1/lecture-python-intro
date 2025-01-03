@@ -31,7 +31,7 @@ Sometimes this theory is also called a "fiscal theory of price levels" to emphas
 
 The theory has been extended, criticized, and applied by John Cochrane {cite}`cochrane2023fiscal`.
 
-In another lecture {doc}`price level histories <inflation_history>`, we described some European hyperinflations that occurred in the wake of World War I.
+In another lecture [price level histories](inflation_history.md), we described some European hyperinflations that occurred in the wake of World War I.
 
 Elemental forces at work in the fiscal theory of the price level help to understand those episodes.
 
@@ -49,7 +49,7 @@ The model in this lecture is a "rational expectations" (or "perfect foresight") 
 
 While Cagan didn't use that "rational expectations" version of the model, Thomas Sargent {cite}`sargent1982ends` did when he studied the Ends of Four Big Inflations in Europe after World War I.
 
-* this lecture {doc}`fiscal theory of the price level with adaptive expectations <cagan_adaptive>` describes a version of the model that does not impose "rational expectations" but instead uses 
+* this lecture [fiscal theory of the price level with adaptive expectations](cagan_adaptive.md) describes a version of the model that does not impose "rational expectations" but instead uses 
   what Cagan and his teacher Milton Friedman called "adaptive expectations"
 
    * a reader of both lectures will notice that the algebra is less complicated in the present rational expectations version of the model
@@ -61,7 +61,7 @@ In those experiments, we'll encounter an instance of a "velocity dividend" that 
 
 To facilitate using linear matrix algebra as our main mathematical tool, we'll use a finite horizon version of the model.
 
-As in the {doc}`present values <pv>` and {doc}`consumption smoothing<cons_smooth>` lectures, our mathematical tools are matrix multiplication and matrix inversion.
+As in the [present values](pv.md) and [consumption smoothing](cons_smooth.md) lectures, our mathematical tools are matrix multiplication and matrix inversion.
 
 
 ## Structure of the model
@@ -102,7 +102,7 @@ problem.
 This lets us set
 
 $$ 
-\pi_t^* = \pi_t , % \forall t 
+\pi_t^* = \pi_t ,
 $$ (eq:ree)
 
 while equating demand for money to supply lets us set $m_t^d = m_t$ for all $t \geq 0$. 
@@ -606,12 +606,12 @@ experiment_plot(plot_configs, ax)
 ```
 
 It is instructive to compare the preceding graphs with graphs of log price levels and inflation rates for data from four big inflations described in
-{doc}`this lecture <inflation_history>`.
+[this lecture](inflation_history.md).
 
 In particular, in the above graphs, notice how a gradual fall in inflation precedes the "sudden stop" when it has been anticipated long beforehand, but how
 inflation instead falls abruptly when the permanent drop in money supply growth is unanticipated.
 
-It seems to the author team at quantecon that the drops in inflation near the ends of the four hyperinflations described in {doc}`this lecture <inflation_history>`
+It seems to the author team at quantecon that the drops in inflation near the ends of the four hyperinflations described in [this lecture](inflation_history.md)
 more closely resemble outcomes from the experiment 2 "unforeseen stabilization". 
 
 (It is fair to say that the preceding informal pattern recognition exercise should be supplemented with a more formal structural statistical analysis.)
@@ -651,7 +651,7 @@ plot_sequences(sequences, (r'$\mu$', r'$\pi$',
 
 ## Sequel
 
-Another lecture {doc}`monetarist theory of price levels with adaptive expectations <cagan_adaptive>` describes an "adaptive expectations" version of Cagan's model.
+Another lecture [monetarist theory of price levels with adaptive expectations](cagan_adaptive.md) describes an "adaptive expectations" version of Cagan's model.
 
 The dynamics become more complicated and so does the algebra.
 

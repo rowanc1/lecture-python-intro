@@ -722,7 +722,7 @@ If $P$ is everywhere positive, then $P$ has exactly one stationary
 distribution.
 ```
 
-We will come back to this when we introduce irreducibility in the {doc}`next lecture <markov_chains_II>` on Markov chains.
+We will come back to this when we introduce irreducibility in the [next lecture](markov_chains_II.md) on Markov chains.
 
 
 

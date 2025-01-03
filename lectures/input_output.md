@@ -73,13 +73,10 @@ A, F = build_coefficient_matrices(Z, X)
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: US 15 sector production network
-    name: us_15sectors
-tags: [hide-input]
----
+:label: us_15sectors
+:caption: US 15 sector production network
+:tags: hide-input
+
 centrality = qbn_io.eigenvector_centrality(A)
 
 # Remove self-loops
@@ -117,7 +114,7 @@ A basic framework for their analysis is
 
 
 
-After  introducing the input-output model, we describe some of its connections to {doc}`linear programming lecture <lp_intro>`.
+After  introducing the input-output model, we describe some of its connections to [linear programming lecture](lp_intro.md).
 
 
 ## Input-output analysis
@@ -228,8 +225,6 @@ ax.text(260, 115, "solution", size=10)
 plt.show()
 ```
 
-+++ {"user_expressions": []}
-
 More generally,   constraints on production are
 
 $$
@@ -313,8 +308,6 @@ x = L @ d   # solving for gross output
 x
 ```
 
-+++ {"user_expressions": []}
-
 ## Production possibility frontier
 
 The second equation of {eq}`eq:inout_1` can be written
@@ -361,15 +354,11 @@ A0 = a0 @ L
 A0
 ```
 
-+++ {"user_expressions": []}
-
 Thus, the production possibility frontier for this economy is
 
 $$
 10d_1 + 500d_2 = x_0
 $$
-
-+++ {"user_expressions": []}
 
 ## Prices
 
@@ -484,13 +473,11 @@ ax.text(18, 60, "dual solution", size=10)
 plt.show()
 ```
 
-+++ {"user_expressions": []}
-
 ## Leontief inverse
 
 We have discussed that gross output $x$ is given by {eq}`eq:inout_2`, where $L$ is called the Leontief Inverse.
 
-Recall the {doc}`Neumann Series Lemma <eigen_II>` which states that $L$ exists if the spectral radius $r(A)<1$.
+Recall the [Neumann Series Lemma](eigen_II.md) which states that $L$ exists if the spectral radius $r(A)<1$.
 
 In fact
 
@@ -514,7 +501,7 @@ This illustrates that an element $l_{ij}$ of $L$ shows the total impact on secto
 
 ## Applications of graph theory
 
-We can further study input-output networks through applications of {doc}`graph theory <networks>`.
+We can further study input-output networks through applications of [graph theory](networks.md).
 
 An input-output network can be represented by a weighted directed graph induced by the adjacency matrix $A$.
 
@@ -686,8 +673,6 @@ L = np.linalg.inv(B)
 A_0 = a_0 @ L
 A_0
 ```
-
-+++ {"user_expressions": []}
 
 Thus the production possibility frontier is given by
 

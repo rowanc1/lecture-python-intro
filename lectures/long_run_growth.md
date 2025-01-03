@@ -15,7 +15,7 @@ kernelspec:
 
 ## Overview
 
-In this lecture we use Python, {doc}`pandas<pyprog:pandas>`, and {doc}`Matplotlib<pyprog:matplotlib>` to download, organize, and visualize historical data on economic growth.
+In this lecture we use Python, [pandas](pyprog:pandas), and [Matplotlib](pyprog:matplotlib) to download, organize, and visualize historical data on economic growth.
 
 In addition to learning how to deploy these tools more generally, we'll use them to describe facts about economic growth experiences across many countries over several centuries.
 
@@ -160,13 +160,10 @@ In this section we examine GDP per capita over the long run for several differen
 First we examine UK GDP growth
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP per Capita (GBR)
-    name: gdppc_gbr1
-    width: 500px
----
+:label: gdppc_gbr1
+:caption: GDP per Capita (GBR)
+:width: 500px
+
 fig, ax = plt.subplots(dpi=300)
 country = 'GBR'
 gdp_pc[country].plot(
@@ -186,12 +183,9 @@ We can see that the data is non-continuous for longer periods in the early 250 y
 Here we use dashed lines to indicate interpolated trends
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP per Capita (GBR)
-    name: gdppc_gbr2
----
+:label: gdppc_gbr2
+:caption: GDP per Capita (GBR)
+
 fig, ax = plt.subplots(dpi=300)
 country = 'GBR'
 ax.plot(gdp_pc[country].interpolate(),
@@ -260,13 +254,10 @@ How does this compare with other countries' growth trajectories?
 Let's look at the United States (USA), United Kingdom (GBR), and China (CHN)
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP per Capita, 1500- (China, UK, USA)
-    name: gdppc_comparison
-tags: [hide-input]
----
+:label: gdppc_comparison
+:caption: GDP per Capita, 1500- (China, UK, USA)
+:tags: hide-input
+
 # Define the namedtuple for the events
 Event = namedtuple('Event', ['year_range', 'y_text', 'text', 'color', 'ymax'])
 
@@ -347,13 +338,10 @@ Thus, the graph indicates
 - how stunning have been the growth achievements of modern Chinese economic policies by the PRC that culminated with its late 1970s reform and liberalization.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP per Capita, 1500-2000 (China)
-    name: gdppc_china
-tags: [hide-input]
----
+:label: gdppc_china
+:caption: GDP per Capita, 1500-2000 (China)
+:tags: hide-input
+
 fig, ax = plt.subplots(dpi=300, figsize=(10, 6))
 
 country = ['CHN']
@@ -408,13 +396,10 @@ In the following graph, please watch for
 - interruptions and scars left by [business cycle](business_cycle) recessions and depressions.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP per Capita, 1500-2000 (UK and US)
-    name: gdppc_ukus
-tags: [hide-input]
----
+:label: gdppc_ukus
+:caption: GDP per Capita, 1500-2000 (UK and US)
+:tags: hide-input
+
 fig, ax = plt.subplots(dpi=300, figsize=(10, 6))
 
 country = ['GBR', 'USA']
@@ -482,12 +467,9 @@ The growth continued until the large dip in the 1930s when the Great Depression 
 Meanwhile, Russia experienced significant setbacks during World War I and recovered significantly after the February Revolution.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP in the early industrialization era
-    name: gdp1
----
+:label: gdp1
+:caption: GDP in the early industrialization era
+
 fig, ax = plt.subplots(dpi=300)
 country = ['CHN', 'SUN', 'JPN', 'GBR', 'USA']
 start_year, end_year = (1820, 1945)
@@ -546,12 +528,9 @@ In the spirit of Tooze's chapter 1 analysis, doing this will provide some inform
 The following graph displays how quickly China has grown, especially since the late 1970s.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: GDP in the modern era
-    name: gdp2
----
+:label: gdp2
+:caption: GDP in the modern era
+
 fig, ax = plt.subplots(dpi=300)
 country = ['CHN', 'SUN', 'JPN', 'GBR', 'USA']
 start_year, end_year = (1950, 2020)
@@ -595,12 +574,9 @@ Looking more closely, let's compare the time series for `Western Offshoots` and 
 Again we see the divergence of the West from the rest of the world after the Industrial Revolution and the convergence of the world after the 1950s
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Regional GDP per capita
-    name: region_gdppc
----
+:label: region_gdppc
+:caption: Regional GDP per capita
+
 fig, ax = plt.subplots(dpi=300)
 regionalgdp_pc.plot(ax=ax, xlabel='year',
                     lw=2,

@@ -61,7 +61,7 @@ Things were different in the 20th century, as we shall see in this lecture.
 A widely believed explanation of this big difference is that countries' abandoning gold and silver standards in the early twentieth century. 
 
 ```{tip}
-This lecture sets the stage for some subsequent lectures about a theory that macro economists use to think about determinants of the price level, namely, {doc}`cagan_ree` and {doc}`cagan_adaptive`
+This lecture sets the stage for some subsequent lectures about a theory that macro economists use to think about determinants of the price level, namely, [](cagan_ree.md) and [](cagan_adaptive.md)
 ```
 
 ## Four centuries of price levels
@@ -96,12 +96,9 @@ We first plot price levels over the period 1600-1914.
 During most years in this time interval, the countries were on a gold or silver standard.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Long run time series of the price level
-    name: lrpl
----
+:label: lrpl
+:caption: Long run time series of the price level
+
 df_fig5_befe1914 = df_fig5[df_fig5.index <= 1914]
 
 # Create plot
@@ -132,7 +129,7 @@ By staring at {numref}`lrpl` carefully, you might be able to guess when these te
 During these episodes, the gold/silver standard was temporarily abandoned when a government printed paper money to pay for war expenditures.
 
 ```{note}
-This quantecon lecture {doc}`french_rev` describes circumstances leading up to and during the big inflation that occurred during the French Revolution.
+This quantecon lecture [](french_rev.md) describes circumstances leading up to and during the big inflation that occurred during the French Revolution.
 ```
 
 Despite these temporary lapses, a striking thing about the figure is that price levels were roughly constant over three centuries.  
@@ -172,12 +169,9 @@ Although we didn't have to use logarithms in our earlier graphs that had stopped
 After the outbreak of the Great War in 1914, the four countries left the gold standard and in so doing acquired the ability to print money to finance government expenditures.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Long run time series of the price level (log)
-    name: lrpl_lg
----
+:label: lrpl_lg
+:caption: Long run time series of the price level (log)
+
 fig, ax = plt.subplots(dpi=200)
 
 for col in cols:
@@ -410,12 +404,9 @@ The sources of our data are:
 * Table 3.4, exchange rate with US
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Price index and exchange rate (Austria)
-    name: pi_xrate_austria
----
+:label: pi_xrate_austria
+:caption: Price index and exchange rate (Austria)
+
 p_seq = df_aus['Retail price index, 52 commodities']
 e_seq = df_aus['Exchange Rate']
 
@@ -430,12 +421,9 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Monthly inflation rate (Austria)
-    name: inflationrate_austria
----
+:label: inflationrate_austria
+:caption: Monthly inflation rate (Austria)
+
 # Plot moving average
 fig, ax = plt.subplots(dpi=200)
 _ = pr_plot(p_seq, df_aus.index, ax)
@@ -458,12 +446,9 @@ The source of our data for Hungary is:
 * Table 3.10, price level $\exp p$ and exchange rate
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Price index and exchange rate (Hungary)
-    name: pi_xrate_hungary
----
+:label: pi_xrate_hungary
+:caption: Price index and exchange rate (Hungary)
+
 p_seq = df_hun['Hungarian index of prices']
 e_seq = 1 / df_hun['Cents per crown in New York']
 
@@ -478,12 +463,9 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Monthly inflation rate (Hungary)
-    name: inflationrate_hungary
----
+:label: inflationrate_hungary
+:caption: Monthly inflation rate (Hungary)
+
 # Plot moving average
 fig, ax = plt.subplots(dpi=200)
 _ = pr_plot(p_seq, df_hun.index, ax)
@@ -504,12 +486,9 @@ We dropped the exchange rate after June 1924, when the zloty was adopted. We did
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Price index and exchange rate (Poland)
-    name: pi_xrate_poland
----
+:label: pi_xrate_poland
+:caption: Price index and exchange rate (Poland)
+
 # Splice three price series in different units
 p_seq1 = df_pol['Wholesale price index'].copy()
 p_seq2 = df_pol['Wholesale Price Index: '
@@ -547,12 +526,9 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Monthly inflation rate (Poland)
-    name: inflationrate_poland
----
+:label: inflationrate_poland
+:caption: Monthly inflation rate (Poland)
+
 # Plot moving average
 fig, ax = plt.subplots(dpi=200)
 _ = pr_plot(p_seq, df_pol.index, ax)
@@ -568,12 +544,9 @@ The sources of our data for Germany are the following tables from chapter 3 of {
 * Table 3.19, exchange rate
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Price index and exchange rate (Germany)
-    name: pi_xrate_germany
----
+:label: pi_xrate_germany
+:caption: Price index and exchange rate (Germany)
+
 p_seq = df_deu['Price index (on basis of marks before July 1924,'
                 '  reichsmarks after)'].copy()
 e_seq = 1/df_deu['Cents per mark']
@@ -589,12 +562,9 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Price index (adjusted) and exchange rate (Germany)
-    name: piadj_xrate_germany
----
+:label: piadj_xrate_germany
+:caption: Price index (adjusted) and exchange rate (Germany)
+
 p_seq = df_deu['Price index (on basis of marks before July 1924,'
                 '  reichsmarks after)'].copy()
 e_seq = 1/df_deu['Cents per mark'].copy()
@@ -616,12 +586,9 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Monthly inflation rate (Germany)
-    name: inflationrate_germany
----
+:label: inflationrate_germany
+:caption: Monthly inflation rate (Germany)
+
 # Plot moving average
 fig, ax = plt.subplots(dpi=200)
 _ = pr_plot(p_seq, df_deu.index, ax)
@@ -669,6 +636,6 @@ Chapter 3 of {cite}`sargent2002big`  described deliberate changes in policy that
 
 Each government stopped printing money to pay for goods and services once again and made its currency convertible to the US dollar or the UK pound.
 
-The story told in {cite}`sargent2002big` is grounded in a *monetarist theory of the price level* described in {doc}`cagan_ree` and {doc}`cagan_adaptive`.
+The story told in {cite}`sargent2002big` is grounded in a *monetarist theory of the price level* described in [](cagan_ree.md) and [](cagan_adaptive.md).
 
 Those lectures discuss theories about what owners of those rapidly depreciating currencies were thinking and how their beliefs shaped responses of inflation to government monetary and fiscal policies.

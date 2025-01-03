@@ -679,12 +679,9 @@ Now that we have defined our functions, we can plot some outcomes.
 First we study the quality of our approximations
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Finite lease present value $T$ periods ahead"
-    name: finite_lease_present_value
----
+:label: finite_lease_present_value
+:caption: Finite lease present value $T$ periods ahead
+
 def plot_function(axes, x_vals, func, args):
     axes.plot(x_vals, func(*args), label=func.__name__)
 
@@ -718,12 +715,9 @@ Next we compare the infinite and finite duration lease present values
 over different lease lengths $T$.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Infinite and finite lease present value $T$ periods ahead"
-    name: infinite_and_finite_lease_present_value
----
+:label: infinite_and_finite_lease_present_value
+:caption: Infinite and finite lease present value $T$ periods ahead
+
 # Convergence of infinite and finite
 T_max = 1000
 T = np.arange(0, T_max+1)
@@ -746,12 +740,9 @@ Now we consider two different views of what happens as $r$ and
 $g$ covary
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Value of lease of length $T$"
-    name: value_of_lease
----
+:label: value_of_lease
+:caption: Value of lease of length $T$
+
 # First view
 # Changing r and g
 fig, ax = plt.subplots()
@@ -780,12 +771,9 @@ If you aren't enamored of 3-d graphs, feel free to skip the next
 visualization!
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Three period lease PV with varying $g$ and $r$"
-    name: three_period_lease_PV
----
+:label: three_period_lease_PV
+:caption: Three period lease PV with varying $g$ and $r$
+
 # Second view
 fig = plt.figure(figsize = [16, 5])
 T = 3
@@ -859,12 +847,9 @@ time path of $y_t$, given that consumption is a constant fraction
 of national income, and investment is fixed.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Path of aggregate output tver time"
-    name: path_of_aggregate_output_over_time
----
+:label: path_of_aggregate_output_over_time
+:caption: Path of aggregate output tver time
+
 # Function that calculates a path of y
 def calculate_y(i, b, g, T, y_init):
     y = np.zeros(T+1)
@@ -898,12 +883,9 @@ happen if we vary the so-called **marginal propensity to consume**,
 i.e., the fraction of income that is consumed
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Changing consumption as a fraction of income"
-    name: changing_consumption_as_fraction_of_income
----
+:label: changing_consumption_as_fraction_of_income
+:caption: Changing consumption as a fraction of income
+
 bs = (1/3, 2/3, 5/6, 0.9)
 
 fig,ax = plt.subplots()
@@ -923,12 +905,9 @@ path of output over time.
 Now we will compare the effects on output of increases in investment and government spending.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Different increase on output"
-    name: different_increase_on_output
----
+:label: different_increase_on_output
+:caption: Different increase on output
+
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6, 10))
 fig.subplots_adjust(hspace=0.3)
 
