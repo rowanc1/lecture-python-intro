@@ -41,7 +41,7 @@ We tell how to solve a linear programming problem using [SciPy](https://scipy.or
 
 ```{seealso}
 In another lecture, we will employ the linear programming method to solve the 
-[optimal transport problem](tools:opt_transport).
+[optimal transport problem](xref:tools#opt_transport).
 ```
 
 Let's start with some standard imports.

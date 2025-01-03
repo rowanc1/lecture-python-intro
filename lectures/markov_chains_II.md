@@ -165,7 +165,7 @@ Theorem 5.2 of {cite}`haggstrom2002finite`.
 Under irreducibility, yet another important result obtains:
 
 ````{prf:theorem}
-:label: stationary
+:label: prf:stationary
 
 If $P$ is irreducible and $\psi^*$ is the unique stationary
 distribution, then, for all $x \in S$,
