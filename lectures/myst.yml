@@ -105,6 +105,7 @@ project:
     GBR: United Kingdom
     CHN: China
     GDP: Gross Domestic Products
+    CLT: central limit theorem
   numbering:
     headings: true
     figure:

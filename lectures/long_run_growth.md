@@ -162,7 +162,6 @@ First we examine UK GDP growth
 ```{code-cell} ipython3
 :label: gdppc_gbr1
 :caption: GDP per Capita (GBR)
-:width: 500px
 
 fig, ax = plt.subplots(dpi=300)
 country = 'GBR'
