@@ -107,7 +107,9 @@ project:
     GDP: Gross Domestic Products
     CLT: central limit theorem
   numbering:
+    titles: true
     headings: true
+    heading_1: false
     figure:
       template: Fig. %s
   settings:

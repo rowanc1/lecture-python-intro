@@ -4,7 +4,26 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
-  - anaconda=2024.10
+  # - anaconda
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - dask
+  - numba
+  - jupyterlab
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - yfinance
+  - quantecon
+  - sympy
+  - statsmodels
+  - plotly
+  - networkx
+  - seaborn
+  - graphviz
+  - openpyxl
   - pip
   - pip:
       - jupyter-book==1.0.3

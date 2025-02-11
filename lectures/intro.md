@@ -1,4 +1,5 @@
 ---
+title: A First Course in Quantitative Economics with Python
 jupytext:
   text_representation:
     extension: .md
@@ -9,10 +10,16 @@ kernelspec:
   name: python3
 ---
 
-# A First Course in Quantitative Economics with Python
++++ { "part": "abstract" }
+Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
++++
 
-This lecture series provides an introduction to quantitative economics using Python. 
+This lecture series provides an introduction to quantitative economics using Python.
 
 ```{tableofcontents}
+
 ```
 
++++ { "part": "acknowledgements" }
+Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
++++
