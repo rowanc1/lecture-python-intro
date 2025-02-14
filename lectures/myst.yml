@@ -134,4 +134,4 @@ site:
   parts:
     footer: footer.md
   # template: book-theme
-  template: ../../qe-theme/.deploy/quantecon
+  template: https://github.com/curvenote-themes/quantecon/archive/refs/heads/main.zip
