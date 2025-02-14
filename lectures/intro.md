@@ -14,11 +14,13 @@ kernelspec:
 Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
 +++
 
-This lecture series provides an introduction to quantitative economics using Python.
+This lecture series provides an introduction to quantitative economics using Python[^1].
 
 ```{tableofcontents}
 
 ```
+
+[^1]: python is not a footnote
 
 +++ { "part": "acknowledgements" }
 Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum

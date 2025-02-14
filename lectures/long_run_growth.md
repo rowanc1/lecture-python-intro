@@ -1,4 +1,13 @@
 ---
+exports:
+  - format: pdf
+    template: plain_latex_book
+    output: exports/long_run_growth.pdf
+downloads:
+  - file: exports/long_run_growth.pdf
+    title: Lecture (PDF)
+  - file: ./long_run_growth.md
+    title: Notebook (md)
 jupytext:
   text_representation:
     extension: .md
@@ -19,45 +28,43 @@ In this lecture we use Python, [pandas](xref:pyprog#pandas), and [Matplotlib](xr
 
 In addition to learning how to deploy these tools more generally, we'll use them to describe facts about economic growth experiences across many countries over several centuries.
 
-Such "growth facts" are interesting for a variety of reasons.  
+Such "growth facts" are interesting for a variety of reasons.
 
 Explaining growth facts is a principal purpose of both "development economics" and "economic history".
 
 And growth facts are important inputs into historians' studies of geopolitical forces and dynamics.
 
-
 Thus, Adam Tooze's account of the geopolitical precedents and antecedents of World War I begins by describing how the Gross Domestic Products (GDP) of European Great Powers had evolved during the 70 years preceding 1914 (see chapter 1 of {cite}`Tooze_2014`).
 
 Using the very same data that Tooze used to construct his figure (with a slightly longer timeline), here is our version of his chapter 1 figure.
-
 
 ```{figure} _static/lecture_specific/long_run_growth/tooze_ch1_graph.png
 :width: 100%
 ```
 
-(This is just a copy of our figure {numref}`gdp1`.  We describe how we constructed it later in this lecture.)
+(This is just a copy of our figure {numref}`gdp1`. We describe how we constructed it later in this lecture.)
 
-Chapter 1  of {cite}`Tooze_2014` used his graph to show how US GDP started the 19th century way behind the GDP of the British Empire.
+Chapter 1 of {cite}`Tooze_2014` used his graph to show how US GDP started the 19th century way behind the GDP of the British Empire.
 
 By the end of the nineteenth century, US GDP had caught up with GDP of the British Empire, and how during the first half of the 20th century,
 US GDP surpassed that of the British Empire.
 
 For Adam Tooze, that fact was a key geopolitical underpinning for the "American century".
 
-Looking at this  graph and how it set the geopolitical stage for "the American (20th) century" naturally 
+Looking at this graph and how it set the geopolitical stage for "the American (20th) century" naturally
 tempts one to want a counterpart to his graph for 2014 or later.
 
-(An impatient reader seeking a hint at the answer  might now want to jump ahead and look at figure {numref}`gdp2`.)
+(An impatient reader seeking a hint at the answer might now want to jump ahead and look at figure {numref}`gdp2`.)
 
 As we'll see, reasoning by analogy, this graph perhaps set the stage for an "XXX (21st) century", where you are free to fill in your guess for country XXX.
 
 As we gather data to construct those two graphs, we'll also study growth experiences for a number of countries for time horizons extending as far back as possible.
 
-These graphs will portray how the "Industrial Revolution" began in Britain in the late 18th century, then migrated to one country after another.  
+These graphs will portray how the "Industrial Revolution" began in Britain in the late 18th century, then migrated to one country after another.
 
-In a nutshell, this lecture records growth trajectories of various countries over long time periods. 
+In a nutshell, this lecture records growth trajectories of various countries over long time periods.
 
-While some countries have experienced long-term rapid growth across that has lasted a hundred years, others have not. 
+While some countries have experienced long-term rapid growth across that has lasted a hundred years, others have not.
 
 Since populations differ across countries and vary within a country over time, it will
 be interesting to describe both total GDP and GDP per capita as it evolves within a country.
@@ -77,7 +84,7 @@ from collections import namedtuple
 A project initiated by [Angus Maddison](https://en.wikipedia.org/wiki/Angus_Maddison) has collected many historical time series related to economic growth,
 some dating back to the first century.
 
-The data can be downloaded from the [Maddison Historical Statistics](https://www.rug.nl/ggdc/historicaldevelopment/maddison/) by clicking on the "Latest Maddison Project Release". 
+The data can be downloaded from the [Maddison Historical Statistics](https://www.rug.nl/ggdc/historicaldevelopment/maddison/) by clicking on the "Latest Maddison Project Release".
 
 We are going to read the data from a QuantEcon GitHub repository.
 
@@ -87,7 +94,7 @@ Here we read the Maddison data into a pandas `DataFrame`:
 
 ```{code-cell} ipython3
 data_url = "https://github.com/QuantEcon/lecture-python-intro/raw/main/lectures/datasets/mpd2020.xlsx"
-data = pd.read_excel(data_url, 
+data = pd.read_excel(data_url,
                      sheet_name='Full data')
 data.head()
 ```
@@ -101,7 +108,7 @@ countries = data.country.unique()
 len(countries)
 ```
 
-We can now explore some of the 169 countries that are available. 
+We can now explore some of the 169 countries that are available.
 
 Let's loop over each country to understand which years are available for each country
 
@@ -147,7 +154,7 @@ country_names = data['countrycode']
 colors = cm.tab20(np.linspace(0, 0.95, len(country_names)))
 
 # Create a dictionary to map each country to its corresponding color
-color_mapping = {country: color for 
+color_mapping = {country: color for
                  country, color in zip(country_names, colors)}
 ```
 
@@ -236,19 +243,19 @@ def draw_interp_plots(series,        # pandas series
                 color=color_mapping[c],
                 alpha=0.8,
                 label=code_to_name.loc[c]['country'])
-        
+
         if logscale:
             ax.set_yscale('log')
-    
+
     # Draw the legend outside the plot
     ax.legend(loc='upper left', frameon=False)
     ax.set_ylabel(ylabel)
     ax.set_xlabel(xlabel)
 ```
 
-As you can see from this chart, economic growth started in earnest in the 18th century and continued for the next two hundred years. 
+As you can see from this chart, economic growth started in earnest in the 18th century and continued for the next two hundred years.
 
-How does this compare with other countries' growth trajectories? 
+How does this compare with other countries' growth trajectories?
 
 Let's look at the United States (USA), United Kingdom (GBR), and China (CHN)
 
@@ -263,7 +270,7 @@ Event = namedtuple('Event', ['year_range', 'y_text', 'text', 'color', 'ymax'])
 fig, ax = plt.subplots(dpi=300, figsize=(10, 6))
 
 country = ['CHN', 'GBR', 'USA']
-draw_interp_plots(gdp_pc[country].loc[1500:], 
+draw_interp_plots(gdp_pc[country].loc[1500:],
                   country,
                   'international dollars','year',
                   color_mapping, code_to_name, 2, False, ax)
@@ -271,31 +278,31 @@ draw_interp_plots(gdp_pc[country].loc[1500:],
 # Define the parameters for the events and the text
 ylim = ax.get_ylim()[1]
 b_params = {'color':'grey', 'alpha': 0.2}
-t_params = {'fontsize': 9, 
+t_params = {'fontsize': 9,
             'va':'center', 'ha':'center'}
 
 # Create a list of events to annotate
 events = [
-    Event((1650, 1652), ylim + ylim*0.04, 
+    Event((1650, 1652), ylim + ylim*0.04,
           'the Navigation Act\n(1651)',
           color_mapping['GBR'], 1),
-    Event((1655, 1684), ylim + ylim*0.13, 
-          'Closed-door Policy\n(1655-1684)', 
+    Event((1655, 1684), ylim + ylim*0.13,
+          'Closed-door Policy\n(1655-1684)',
           color_mapping['CHN'], 1.1),
     Event((1848, 1850), ylim + ylim*0.22,
-          'the Repeal of Navigation Act\n(1849)', 
+          'the Repeal of Navigation Act\n(1849)',
           color_mapping['GBR'], 1.18),
-    Event((1765, 1791), ylim + ylim*0.04, 
-          'American Revolution\n(1765-1791)', 
+    Event((1765, 1791), ylim + ylim*0.04,
+          'American Revolution\n(1765-1791)',
           color_mapping['USA'], 1),
-    Event((1760, 1840), ylim + ylim*0.13, 
-          'Industrial Revolution\n(1760-1840)', 
+    Event((1760, 1840), ylim + ylim*0.13,
+          'Industrial Revolution\n(1760-1840)',
           'grey', 1.1),
-    Event((1929, 1939), ylim + ylim*0.04, 
-          'the Great Depression\n(1929–1939)', 
+    Event((1929, 1939), ylim + ylim*0.04,
+          'the Great Depression\n(1929–1939)',
           'grey', 1),
-    Event((1978, 1979), ylim + ylim*0.13, 
-          'Reform and Opening-up\n(1978-1979)', 
+    Event((1978, 1979), ylim + ylim*0.13,
+          'Reform and Opening-up\n(1978-1979)',
           color_mapping['CHN'], 1.1)
 ]
 
@@ -303,8 +310,8 @@ def draw_events(events, ax):
     # Iterate over events and add annotations and vertical lines
     for event in events:
         event_mid = sum(event.year_range)/2
-        ax.text(event_mid, 
-                event.y_text, event.text, 
+        ax.text(event_mid,
+                event.y_text, event.text,
                 color=event.color, **t_params)
         ax.axvspan(*event.year_range, color=event.color, alpha=0.2)
         ax.axvline(event_mid, ymin=1, ymax=event.ymax, color=event.color,
@@ -316,7 +323,7 @@ plt.show()
 ```
 
 The preceding graph of per capita GDP strikingly reveals how the spread of the Industrial Revolution has over time gradually lifted the living standards of substantial
-groups of people  
+groups of people
 
 - most of the growth happened in the past 150 years after the Industrial Revolution.
 - per capita GDP in the US and UK rose and diverged from that of China from 1820 to 1940.
@@ -329,7 +336,7 @@ It is fascinating to see China's GDP per capita levels from 1500 through to the 
 
 Notice the long period of declining GDP per capital levels from the 1700s until the early 20th century.
 
-Thus, the graph indicates 
+Thus, the graph indicates
 
 - a long economic downturn and stagnation after the Closed-door Policy by the Qing government.
 - China's very different experience than the UK's after the onset of the industrial revolution in the UK.
@@ -344,7 +351,7 @@ Thus, the graph indicates
 fig, ax = plt.subplots(dpi=300, figsize=(10, 6))
 
 country = ['CHN']
-draw_interp_plots(gdp_pc[country].loc[1600:2000], 
+draw_interp_plots(gdp_pc[country].loc[1600:2000],
                   country,
                   'international dollars','year',
                   color_mapping, code_to_name, 2, True, ax)
@@ -352,29 +359,29 @@ draw_interp_plots(gdp_pc[country].loc[1600:2000],
 ylim = ax.get_ylim()[1]
 
 events = [
-Event((1655, 1684), ylim + ylim*0.06, 
-      'Closed-door Policy\n(1655-1684)', 
+Event((1655, 1684), ylim + ylim*0.06,
+      'Closed-door Policy\n(1655-1684)',
       'tab:orange', 1),
-Event((1760, 1840), ylim + ylim*0.06, 
-      'Industrial Revolution\n(1760-1840)', 
+Event((1760, 1840), ylim + ylim*0.06,
+      'Industrial Revolution\n(1760-1840)',
       'grey', 1),
-Event((1839, 1842), ylim + ylim*0.2, 
-      'First Opium War\n(1839–1842)', 
+Event((1839, 1842), ylim + ylim*0.2,
+      'First Opium War\n(1839–1842)',
       'tab:red', 1.07),
-Event((1861, 1895), ylim + ylim*0.4, 
-      'Self-Strengthening Movement\n(1861–1895)', 
+Event((1861, 1895), ylim + ylim*0.4,
+      'Self-Strengthening Movement\n(1861–1895)',
       'tab:blue', 1.14),
-Event((1939, 1945), ylim + ylim*0.06, 
-      'WW 2\n(1939-1945)', 
+Event((1939, 1945), ylim + ylim*0.06,
+      'WW 2\n(1939-1945)',
       'tab:red', 1),
-Event((1948, 1950), ylim + ylim*0.23, 
-      'Founding of PRC\n(1949)', 
+Event((1948, 1950), ylim + ylim*0.23,
+      'Founding of PRC\n(1949)',
       color_mapping['CHN'], 1.08),
-Event((1958, 1962), ylim + ylim*0.5, 
-      'Great Leap Forward\n(1958-1962)', 
+Event((1958, 1962), ylim + ylim*0.5,
+      'Great Leap Forward\n(1958-1962)',
       'tab:orange', 1.18),
-Event((1978, 1979), ylim + ylim*0.7, 
-      'Reform and Opening-up\n(1978-1979)', 
+Event((1978, 1979), ylim + ylim*0.7,
+      'Reform and Opening-up\n(1978-1979)',
       'tab:blue', 1.24)
 ]
 
@@ -387,7 +394,8 @@ plt.show()
 
 Now we look at the United States (USA) and United Kingdom (GBR) in more detail.
 
-In the following graph, please watch for 
+In the following graph, please watch for
+
 - impact of trade policy (Navigation Act).
 - productivity changes brought by the Industrial Revolution.
 - how the US gradually approaches and then surpasses the UK, setting the stage for the ''American Century''.
@@ -411,29 +419,29 @@ ylim = ax.get_ylim()[1]
 
 # Create a list of data points
 events = [
-    Event((1651, 1651), ylim + ylim*0.15, 
-          'Navigation Act (UK)\n(1651)', 
+    Event((1651, 1651), ylim + ylim*0.15,
+          'Navigation Act (UK)\n(1651)',
           'tab:orange', 1),
-    Event((1765, 1791), ylim + ylim*0.15, 
+    Event((1765, 1791), ylim + ylim*0.15,
           'American Revolution\n(1765-1791)',
           color_mapping['USA'], 1),
-    Event((1760, 1840), ylim + ylim*0.6, 
-          'Industrial Revolution\n(1760-1840)', 
+    Event((1760, 1840), ylim + ylim*0.6,
+          'Industrial Revolution\n(1760-1840)',
           'grey', 1.08),
-    Event((1848, 1850), ylim + ylim*1.1, 
-          'Repeal of Navigation Act (UK)\n(1849)', 
+    Event((1848, 1850), ylim + ylim*1.1,
+          'Repeal of Navigation Act (UK)\n(1849)',
           'tab:blue', 1.14),
-    Event((1861, 1865), ylim + ylim*1.8, 
-          'American Civil War\n(1861-1865)', 
+    Event((1861, 1865), ylim + ylim*1.8,
+          'American Civil War\n(1861-1865)',
           color_mapping['USA'], 1.21),
-    Event((1914, 1918), ylim + ylim*0.15, 
-          'WW 1\n(1914-1918)', 
+    Event((1914, 1918), ylim + ylim*0.15,
+          'WW 1\n(1914-1918)',
           'tab:red', 1),
-    Event((1929, 1939), ylim + ylim*0.6, 
-          'the Great Depression\n(1929–1939)', 
+    Event((1929, 1939), ylim + ylim*0.6,
+          'the Great Depression\n(1929–1939)',
           'grey', 1.08),
-    Event((1939, 1945), ylim + ylim*1.1, 
-          'WW 2\n(1939-1945)', 
+    Event((1939, 1945), ylim + ylim*1.1,
+          'WW 2\n(1939-1945)',
           'tab:red', 1.14)
 ]
 
@@ -472,7 +480,7 @@ Meanwhile, Russia experienced significant setbacks during World War I and recove
 fig, ax = plt.subplots(dpi=300)
 country = ['CHN', 'SUN', 'JPN', 'GBR', 'USA']
 start_year, end_year = (1820, 1945)
-draw_interp_plots(gdp[country].loc[start_year:end_year], 
+draw_interp_plots(gdp[country].loc[start_year:end_year],
                   country,
                   'international dollars', 'year',
                   color_mapping, code_to_name, 2, False, ax)
@@ -482,7 +490,7 @@ draw_interp_plots(gdp[country].loc[start_year:end_year],
 
 In this section we describe how we have constructed a version of the striking figure from chapter 1 of {cite}`Tooze_2014` that we discussed at the start of this lecture.
 
-Let's first define a collection of countries that consist of the British Empire (BEM) so we can replicate that series in  Tooze's chart.
+Let's first define a collection of countries that consist of the British Empire (BEM) so we can replicate that series in Tooze's chart.
 
 ```{code-cell} ipython3
 BEM = ['GBR', 'IND', 'AUS', 'NZL', 'CAN', 'ZAF']
@@ -505,7 +513,7 @@ code_to_name = pd.concat([code_to_name, bem])
 fig, ax = plt.subplots(dpi=300)
 country = ['DEU', 'USA', 'SUN', 'BEM', 'FRA', 'JPN']
 start_year, end_year = (1821, 1945)
-draw_interp_plots(gdp[country].loc[start_year:end_year], 
+draw_interp_plots(gdp[country].loc[start_year:end_year],
                   country,
                   'international dollars', 'year',
                   color_mapping, code_to_name, 2, False, ax)
@@ -515,7 +523,7 @@ plt.savefig("./_static/lecture_specific/long_run_growth/tooze_ch1_graph.png", dp
 plt.show()
 ```
 
-At the start of this lecture, we noted  how US GDP came from "nowhere" at the start of the 19th century to rival and then overtake the GDP of the British Empire
+At the start of this lecture, we noted how US GDP came from "nowhere" at the start of the 19th century to rival and then overtake the GDP of the British Empire
 by the end of the 19th century, setting the geopolitical stage for the "American (twentieth) century".
 
 Let's move forward in time and start roughly where Tooze's graph stopped after World War II.
@@ -533,13 +541,13 @@ The following graph displays how quickly China has grown, especially since the l
 fig, ax = plt.subplots(dpi=300)
 country = ['CHN', 'SUN', 'JPN', 'GBR', 'USA']
 start_year, end_year = (1950, 2020)
-draw_interp_plots(gdp[country].loc[start_year:end_year], 
+draw_interp_plots(gdp[country].loc[start_year:end_year],
                   country,
                   'international dollars', 'year',
                   color_mapping, code_to_name, 2, False, ax)
 ```
 
-It is tempting to compare this graph with figure {numref}`gdp1` that showed the US overtaking the UK near the start of the "American Century", a version of the graph featured in chapter 1 of  {cite}`Tooze_2014`.
+It is tempting to compare this graph with figure {numref}`gdp1` that showed the US overtaking the UK near the start of the "American Century", a version of the graph featured in chapter 1 of {cite}`Tooze_2014`.
 
 ## Regional analysis
 
@@ -548,8 +556,8 @@ We often want to study the historical experiences of countries outside the club 
 The [Maddison Historical Statistics](https://www.rug.nl/ggdc/historicaldevelopment/maddison/) dataset also includes regional aggregations
 
 ```{code-cell} ipython3
-data = pd.read_excel(data_url, 
-                     sheet_name='Regional data', 
+data = pd.read_excel(data_url,
+                     sheet_name='Regional data',
                      header=(0,1,2),
                      index_col=0)
 data.columns = data.columns.droplevel(level=2)
