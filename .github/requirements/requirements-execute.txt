@@ -18,3 +18,4 @@ networkx
 seaborn
 graphviz
 openpyxl
+setuptools
