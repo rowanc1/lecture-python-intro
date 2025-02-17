@@ -11,7 +11,7 @@ dependencies:
   - dask
   - numba
   - ipykernel
-  - jupyter-server
+  - jupyter_server
   - scikit-image
   - scikit-learn
   - scipy
