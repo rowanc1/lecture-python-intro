@@ -92,7 +92,7 @@ $$
 With  $f(k) := F(k, 1)$, the final expression for capital dynamics is
 
 ```{math}
-:label: solow
+:label: eq:solow
     k_{t+1} = g(k_t)
     \text{ where } g(k) := s f(k) + (1 - \delta) k
 ```
@@ -111,7 +111,7 @@ need to specify the functional form for $f$ and assign values to the parameters.
 We choose the Cobb--Douglas specification $f(k) = A k^\alpha$ and set $A=2.0$,
 $\alpha=0.3$, $s=0.3$ and $\delta=0.4$.
 
-The function $g$ from {eq}`solow` is then plotted, along with the 45-degree line.
+The function $g$ from {eq}`eq:solow` is then plotted, along with the 45-degree line.
 
 
 Let's define the constants.

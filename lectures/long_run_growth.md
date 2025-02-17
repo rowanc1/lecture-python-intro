@@ -15,7 +15,7 @@ kernelspec:
 
 ## Overview
 
-In this lecture we use Python, [pandas](pyprog:pandas), and [Matplotlib](pyprog:matplotlib) to download, organize, and visualize historical data on economic growth.
+In this lecture we use Python, [pandas](xref:pyprog#pandas), and [Matplotlib](xref:pyprog#matplotlib) to download, organize, and visualize historical data on economic growth.
 
 In addition to learning how to deploy these tools more generally, we'll use them to describe facts about economic growth experiences across many countries over several centuries.
 

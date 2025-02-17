@@ -781,7 +781,7 @@ Given the Lorenz curve $y = L(x)$ defined above, the top $100 \times p \%$
 share is defined as
 
 ```{prf:definition}
-:label: top-shares
+:label: prf:top-shares
 
 $$
 T(p) = 1 - L (1-p) 

@@ -203,7 +203,7 @@ $$ (eq:second_order)
 
 together with a pair of integers that are initial conditions for $y_{-1}, y_{-2}$.
 
-First, we'll deploy some techniques for solving the difference equations that are also deployed in [](dynam:samuelson).
+First, we'll deploy some techniques for solving the difference equations that are also deployed in [](xref:dynam#samuelson).
 
 The characteristic equation associated with difference equation {eq}`eq:second_order` is
 

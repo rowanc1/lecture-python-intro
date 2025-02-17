@@ -9,15 +9,6 @@ kernelspec:
   name: python3
 ---
 
-(complex_and_trig)=
-```{raw} html
-<div id="qe-notebook-header" style="text-align:right;">
-        <a href="https://quantecon.org/" title="quantecon.org">
-                <img style="width:250px;display:inline;" src="https://assets.quantecon.org/img/qe-menubar-logo.svg" alt="QuantEcon">
-        </a>
-</div>
-```
-
 ```{index} single: python
 ```
 
@@ -33,7 +24,7 @@ by linear difference equations or linear differential equations.
 For example, these tools are keys to understanding outcomes attained by Paul
 Samuelson (1939) {cite}`Samuelson1939` in his classic paper on interactions
 between the investment accelerator and the Keynesian consumption function, our
-topic in the lecture [Samuelson Multiplier Accelerator](dynam:samuelson).
+topic in the lecture [Samuelson Multiplier Accelerator](xref:dynam#samuelson).
 
 In addition to providing foundations for Samuelson's work and extensions of
 it, this lecture can be read as a stand-alone quick reminder of key results

@@ -90,6 +90,16 @@ project:
         - file: troubleshooting.md
         - file: zreferences.md
         - file: status.md
+  references:
+    intermediate: https://python.quantecon.org/
+    pyprog: https://python-programming.quantecon.org/
+    intro: https://intro.quantecon.org/
+    dle: https://quantecon.github.io/lecture-dle/
+    dps: https://quantecon.github.io/lecture-dps/
+    eqm: https://quantecon.github.io/lecture-eqm/
+    stats: https://quantecon.github.io/lecture-stats/
+    tools: https://quantecon.github.io/lecture-tools-techniques/
+    dynam: https://quantecon.github.io/lecture-dynamics/
   abbreviations:
     USA: United States
     GBR: United Kingdom
@@ -101,6 +111,7 @@ project:
       template: Fig. %s
   settings:
     output_stderr: remove
+    output_matplotlib_strings: remove
   error_rules:
     - rule: reference-syntax-valid
       severity: ignore
