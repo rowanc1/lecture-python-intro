@@ -166,7 +166,7 @@ absolute value, often called the **dominant eigenvalue**.
 For any such matrix $A$, the Perron-Frobenius theorem characterizes certain
 properties of the dominant eigenvalue and its corresponding eigenvector.
 
-```{prf:Theorem} Perron-Frobenius Theorem
+```{prf:theorem} Perron-Frobenius Theorem
 :label: perron-frobenius
 
 If a matrix $A \geq 0$ then,
@@ -257,7 +257,7 @@ We can see that if a matrix is primitive, then it implies the matrix is irreduci
 
 Now let's step back to the primitive matrices part of the Perron-Frobenius theorem
 
-```{prf:Theorem} Continous of Perron-Frobenius Theorem
+```{prf:theorem} Continous of Perron-Frobenius Theorem
 :label: con-perron-frobenius
 
 If $A$ is primitive then,

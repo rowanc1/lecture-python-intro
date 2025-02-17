@@ -179,8 +179,7 @@ a x_0 + b, \quad
 a^2 x_0 + a b + b, \quad \text{etc.}
 ```
 
-Continuing in this way, and using our knowledge of {doc}`geometric series
-<geom_series>`, we find that, for any $t = 0, 1, 2, \ldots$,
+Continuing in this way, and using our knowledge of [geometric series](geom_series.md), we find that, for any $t = 0, 1, 2, \ldots$,
 
 ```{math}
 :label: sdslinmod
@@ -215,7 +214,7 @@ This made analysis of dynamics very easy.
 
 When models are nonlinear, however, the situation can be quite different.
 
-For example, in a later lecture {doc}`solow`, we will study the Solow-Swan growth model, which has dynamics 
+For example, in a later lecture [](solow.md), we will study the Solow-Swan growth model, which has dynamics 
 
 ```{math}
 :label: solow_lom2
@@ -328,10 +327,8 @@ plots.
 
 
 ```{code-cell} ipython
----
-tags: [hide-input,
-       output_scroll]
----
+:tags: hide-input, output_scroll
+
 def subplots():
     "Custom subplots with axes throught the origin"
     fig, ax = plt.subplots()

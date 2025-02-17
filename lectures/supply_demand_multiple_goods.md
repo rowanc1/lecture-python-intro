@@ -16,7 +16,7 @@ kernelspec:
 
 ## Overview
 
-In a {doc}`previous lecture <intro_supply_demand>` we studied supply, demand
+In a [previous lecture](intro_supply_demand.md) we studied supply, demand
 and welfare in a market with a single consumption good.
 
 In this lecture, we study a setting with $n$ goods and $n$ corresponding prices.

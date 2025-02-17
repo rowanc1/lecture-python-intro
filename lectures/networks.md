@@ -87,13 +87,10 @@ To better understand such networks, let's look at some examples in more depth.
 The following figure shows international trade in large commercial aircraft in 2019 based on International Trade Data SITC Revision 2.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Commercial Aircraft Network \n"
-    name: aircraft_network
-tags: [hide-input]
----
+:label: aircraft_network
+:caption: Commercial Aircraft Network
+:tags: hide-input
+
 ch1_data = qbn_data.introduction()
 export_figures = False
 
@@ -399,13 +396,10 @@ To motivate the idea, consider the following figure which shows flows of funds (
 loans) between private banks, grouped by country of origin.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "International Credit Network \n"
-    name: financial_network
-tags: [hide-input]
----
+:label: financial_network
+:caption: International Credit Network
+:tags: hide-input
+
 Z = ch1_data["adjacency_matrix"]["Z"]
 Z_visual= ch1_data["adjacency_matrix"]["Z_visual"]
 countries = ch1_data["adjacency_matrix"]["countries"]
@@ -536,7 +530,6 @@ a_{ij} =
     \\
     0           & \text{ otherwise}.
 \end{cases}
-%
 $$
 
 Once the nodes in $V$ are enumerated, the weight function and
@@ -784,12 +777,9 @@ the graph.
 Consider the following simple example.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Sample Graph
-    name: sample_gph_1
----
+:label: sample_gph_1
+:caption: Sample Graph
+
 G7 = nx.DiGraph()
 
 G7.add_nodes_from(['1','2','3','4','5','6','7'])
@@ -977,12 +967,9 @@ eig_central = eigenvector_centrality(Z)
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Eigenvector centrality
-    name: eigenvctr_centrality
----
+:label: eigenvctr_centrality
+:caption: Eigenvector centrality
+
 fig, ax = plt.subplots()
 
 df = centrality_plot_data(countries, eig_central)
@@ -1113,12 +1100,9 @@ ecentral_authority = eigenvector_centrality(Z, authority=True)
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Eigenvector authority
-    name: eigenvector_centrality
----
+:label: eigenvector_centrality
+:caption: Eigenvector authority
+
 fig, ax = plt.subplots()
 
 df = centrality_plot_data(countries, ecentral_authority)

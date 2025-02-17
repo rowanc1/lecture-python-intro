@@ -16,8 +16,7 @@ kernelspec:
 
 ## Overview
 
-In the {doc}`previous lecture
-<supply_demand_multiple_goods>`, we studied competitive equilibria in an economy with many goods.
+In the [previous lecture](supply_demand_multiple_goods.md), we studied competitive equilibria in an economy with many goods.
 
 While the results of the study were informative, we used a strong simplifying assumption: all of the agents in the economy are identical.
 

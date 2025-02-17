@@ -16,13 +16,13 @@ kernelspec:
 ## Overview
 
 
-In this lecture, we'll study a famous model of the "consumption function" that Milton Friedman {cite}`Friedman1956` and Robert Hall {cite}`Hall1978`)  proposed to fit some empirical data patterns that the original  Keynesian consumption function  described in this QuantEcon lecture {doc}`geometric series <geom_series>`  missed.
+In this lecture, we'll study a famous model of the "consumption function" that Milton Friedman {cite}`Friedman1956` and Robert Hall {cite}`Hall1978`)  proposed to fit some empirical data patterns that the original  Keynesian consumption function  described in this QuantEcon lecture [geometric series](geom_series.md)  missed.
 
 We'll study what is often  called the "consumption-smoothing model." 
 
-We'll use  matrix multiplication and matrix inversion, the same tools that we used in this QuantEcon lecture {doc}`present values <pv>`. 
+We'll use  matrix multiplication and matrix inversion, the same tools that we used in this QuantEcon lecture [present values](pv.md). 
 
-Formulas presented in  {doc}`present value formulas<pv>` are at the core of the consumption-smoothing model because we shall use them to define a consumer's "human wealth".
+Formulas presented in  [present value formulas](pv.md) are at the core of the consumption-smoothing model because we shall use them to define a consumer's "human wealth".
 
 The  key idea that inspired Milton Friedman was that a person's non-financial income, i.e., his or
 her wages from working, can be viewed as a dividend stream from ''human capital''
@@ -30,7 +30,7 @@ and that standard asset-pricing formulas can be applied to compute
 ''non-financial wealth'' that capitalizes that  earnings stream.  
 
 ```{note}
-As we'll see in this QuantEcon lecture  {doc}`equalizing difference model <equalizing_difference>`,
+As we'll see in this QuantEcon lecture  [equalizing difference model](equalizing_difference.md),
 Milton Friedman had used this idea  in his PhD thesis at Columbia University, 
 eventually published as {cite}`kuznets1939incomes` and {cite}`friedman1954incomes`.
 ```
@@ -162,7 +162,7 @@ $$
 
 Human or non-financial wealth  at time $0$ is evidently just the present value of the consumer's non-financial income stream $y$. 
 
-Formally it very much resembles the asset price that we computed in this QuantEcon lecture {doc}`present values <pv>`.
+Formally it very much resembles the asset price that we computed in this QuantEcon lecture [present values](pv.md).
 
 Indeed, this is why Milton Friedman called it "human capital". 
 
@@ -661,9 +661,9 @@ plt.show()
 ## Wrapping up the consumption-smoothing model
 
 The consumption-smoothing model of Milton Friedman {cite}`Friedman1956` and Robert Hall {cite}`Hall1978`) is a cornerstone of modern economics that has important ramifications for the size of the Keynesian  "fiscal policy multiplier" that we  described in
-QuantEcon lecture {doc}`geometric series <geom_series>`.  
+QuantEcon lecture [geometric series](geom_series.md).  
 
-The consumption-smoothingmodel   **lowers** the government expenditure  multiplier relative to  one implied by the original Keynesian consumption function presented in {doc}`geometric series <geom_series>`.
+The consumption-smoothingmodel   **lowers** the government expenditure  multiplier relative to  one implied by the original Keynesian consumption function presented in [geometric series](geom_series.md).
 
 Friedman's   work opened the door to an enlightening literature on the aggregate consumption function and associated government expenditure  multipliers that remains  active today.  
 

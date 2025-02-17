@@ -33,7 +33,7 @@ article {cite}`Samuelson1939` that introduced the *multiplier-accelerator model*
 This model became the workhorse that powered early econometric versions of
 Keynesian macroeconomic models in the United States.
 
-You can read about the details of that model in {doc}`intermediate:samuelson`.
+You can read about the details of that model in [](intermediate:samuelson).
 
 (That lecture also describes some technicalities about second-order linear difference equations.)
 
@@ -137,7 +137,7 @@ The vector $y$ is a complete time path $\{y_t\}_{t=1}^T$.
 Let’s put Python to work on an example that captures the flavor of
 Samuelson’s multiplier-accelerator model.
 
-We'll set parameters equal to the same values we used in {doc}`intermediate:samuelson`.
+We'll set parameters equal to the same values we used in [](intermediate:samuelson).
 
 ```{code-cell} ipython3
 T = 80

@@ -25,14 +25,14 @@ fascinating passage:
 
 This lecture drills down and studies this ancient method for computing square roots by using some of the matrix algebra that we've learned in earlier quantecon lectures. 
 
-In particular, this lecture can be viewed as a sequel to {doc}`eigen_I`.
+In particular, this lecture can be viewed as a sequel to [](eigen_I.md).
 
 It  provides an  example of how eigenvectors isolate  *invariant subspaces* that help construct and analyze solutions of linear difference equations. 
 
 When vector $x_t$ starts in an invariant subspace, iterating the different equation keeps $x_{t+j}$
 in that subspace for all $j \geq 1$.  
 
-Invariant subspace methods are used throughout applied economic dynamics, for example, in the lecture {doc}`money_inflation`.
+Invariant subspace methods are used throughout applied economic dynamics, for example, in the lecture [](money_inflation.md).
 
 Our approach here  is to illustrate the method with an ancient example, one that ancient Greek mathematicians used to compute square roots of positive integers.
 
@@ -80,7 +80,7 @@ $\{y_t\}_{t=0}^\infty$.
 
 There is one equation each for $t = 0, 1, 2, \ldots$.  
 
-We could follow an approach taken in the lecture on {doc}`present values<pv>` and stack all of these equations into a single matrix equation that we would then solve by using matrix inversion.
+We could follow an approach taken in the lecture on [present values](pv.md) and stack all of these equations into a single matrix equation that we would then solve by using matrix inversion.
 
 ```{note} 
 In the present instance, the matrix equation would multiply a countably infinite dimensional square matrix by  a countably infinite dimensional vector.  With some qualifications, matrix multiplication and inversion tools apply to such an equation.
@@ -203,7 +203,7 @@ $$ (eq:second_order)
 
 together with a pair of integers that are initial conditions for $y_{-1}, y_{-2}$.
 
-First, we'll deploy some techniques for solving the difference equations that are also deployed in {doc}`dynam:samuelson`.
+First, we'll deploy some techniques for solving the difference equations that are also deployed in [](dynam:samuelson).
 
 The characteristic equation associated with difference equation {eq}`eq:second_order` is
 
@@ -722,7 +722,7 @@ This lecture sets the stage  for many other applications of the *invariant subsp
 All of these exploit very similar equations based on eigen decompositions. 
 
 We shall encounter equations very similar to {eq}`eq:deactivate1` and {eq}`eq:deactivate2`
-in {doc}`money_inflation` and in many other places in dynamic economic theory.
+in [](money_inflation.md) and in many other places in dynamic economic theory.
 
 
 ## Exercise

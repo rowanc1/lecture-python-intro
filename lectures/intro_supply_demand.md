@@ -21,7 +21,7 @@ the core topics of elementary microeconomics.
 Throughout the lecture, we focus on models with one good and one price.
 
 ```{seealso}
-In a {doc}`subsequent lecture <supply_demand_multiple_goods>` we will investigate settings with
+In a [subsequent lecture](supply_demand_multiple_goods.md) we will investigate settings with
 many goods.
 ```
 
@@ -104,12 +104,9 @@ The total height of each bar $i$ is willingness to pay by consumer $i$.
 The orange portion of some of the bars shows consumer surplus.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Willingness to pay (discrete)"
-    name: wpdisc
----
+:label: wpdisc
+:caption: Willingness to pay (discrete)
+
 fig, ax = plt.subplots()
 consumers = range(1, 11) # consumers 1,..., 10
 # willingness to pay for each consumer
@@ -164,12 +161,9 @@ p = 100 e^{-q}
 $$
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Willingness to pay (continuous)"
-    name: wpcont
----
+:label: wpcont
+:caption: Willingness to pay (continuous)
+
 def inverse_demand(q):
     return 100 * np.exp(- q)
 
@@ -195,12 +189,9 @@ Reasoning by analogy with the discrete case, the area under the demand curve and
 The consumer surplus is shaded in the figure below.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Willingness to pay (continuous) with consumer surplus"
-    name: wpcont_cs
----
+:label: wpcont_cs
+:caption: Willingness to pay (continuous) with consumer surplus
+
 # solve for the value of q where demand meets price
 q_star = np.log(100) - np.log(price)
 
@@ -233,12 +224,9 @@ Having discussed demand, let's now switch over to the supply side of the market.
 The figure below shows the price at which a collection of producers, also numbered 1 to 10, are willing to sell one unit of the good in question
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Willingness to sell (discrete)"
-    name: wsdisc
----
+:label: wsdisc
+:caption: Willingness to sell (discrete)
+
 fig, ax = plt.subplots()
 producers = range(1, 11) # producers 1,..., 10
 # willingness to sell for each producer
@@ -283,12 +271,9 @@ The shaded area is the total producer surplus in this continuous model.
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Willingness to sell (continuous) with producer surplus"
-    name: wscont
----
+:label: wscont
+:caption: Willingness to sell (continuous) with producer surplus
+
 def inverse_supply(q):
     return 2 * q**2
 
@@ -331,12 +316,9 @@ In general, for a function $f$, the **integral** of $f$ over the interval $[a, b
 This value is written as $\int_a^b f(x) \mathrm{d} x$ and illustrated in the figure below when $f(x) = \cos(x/2) + 1$.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Area under the curve"
-    name: integrate
----
+:label: integrate
+:caption: Area under the curve
+
 def f(x):
     return np.cos(x/2) + 1
 
@@ -381,7 +363,7 @@ For most of this discussion, we'll assume that inverse demand and supply curves 
 "Affine" means "linear plus a constant" and [here](https://math.stackexchange.com/questions/275310/what-is-the-difference-between-linear-and-affine-function) is a nice discussion about it.
 ```
 
-We'll also assume affine inverse supply and demand functions when we study models with multiple consumption goods in our {doc}`subsequent lecture <supply_demand_multiple_goods>`.
+We'll also assume affine inverse supply and demand functions when we study models with multiple consumption goods in our [subsequent lecture](supply_demand_multiple_goods.md).
 
 We do this in order to simplify the exposition and enable us to use just a few tools from linear algebra, namely, matrix multiplication and matrix inversion.
 
@@ -431,12 +413,9 @@ def inverse_supply(q, model):
 Here is a plot of these two functions using `market`.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Supply and demand"
-    name: supply_demand
----
+:label: supply_demand
+:caption: Supply and demand
+
 market = create_market()
 
 grid_min, grid_max, grid_size = 0, 1.5, 200
@@ -474,13 +453,10 @@ $$ (eq:cstm_spls)
 The next figure illustrates
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Supply and demand (consumer surplus)"
-    name: supply_demand_cs
-tags: [hide-input]
----
+:label: supply_demand_cs
+:caption: Supply and demand (consumer surplus)
+:tags: hide-input
+
 
 q = 1.25
 p = inverse_demand(q, market)
@@ -540,13 +516,10 @@ $$ (eq:pdcr_spls)
 The next figure illustrates
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Supply and demand (producer surplus)"
-    name: supply_demand_ps
-tags: [hide-input]
----
+:label: supply_demand_ps
+:caption: Supply and demand (producer surplus)
+:tags: hide-input
+
 
 q = 0.75
 p = inverse_supply(q, market)
@@ -621,13 +594,10 @@ def W(q, market):
 The next figure plots welfare as a function of $q$.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Welfare"
-    name: wf
-tags: [hide-input]
----
+:label: wf
+:caption: Welfare
+:tags: hide-input
+
 
 q_vals = np.linspace(0, 1.78, 200)
 fig, ax = plt.subplots()
@@ -690,7 +660,7 @@ It also brings a useful **competitive equilibrium computation strategy:**
 
 ## Generalizations
 
-In a {doc}`later lecture <supply_demand_multiple_goods>`, we'll derive
+In a [later lecture](supply_demand_multiple_goods.md), we'll derive
 generalizations of the above demand and supply curves from other objects.
 
 Our generalizations will extend the preceding analysis of a market for a single good to the analysis of $n$ simultaneous markets in $n$ goods.

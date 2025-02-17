@@ -15,9 +15,8 @@ kernelspec:
 In this lecture, we will need the following library. Install [ortools](https://developers.google.com/optimization) using `pip`.
 
 ```{code-cell} ipython3
----
-tags: [hide-output]
----
+:tags: hide-output
+
 !pip install ortools
 ```
 
@@ -42,7 +41,7 @@ We tell how to solve a linear programming problem using [SciPy](https://scipy.or
 
 ```{seealso}
 In another lecture, we will employ the linear programming method to solve the 
-{doc}`optimal transport problem <tools:opt_transport>`.
+[optimal transport problem](tools:opt_transport).
 ```
 
 Let's start with some standard imports.
@@ -99,9 +98,8 @@ The following graph illustrates the firm's constraints and iso-revenue lines.
 Iso-revenue lines show all the combinations of materials and labor that produce the same revenue.
 
 ```{code-cell} ipython3
----
-tags: [hide-input]
----
+:tags: hide-input
+
 fig, ax = plt.subplots()
 # Draw constraint lines
 ax.set_xlim(0,15)

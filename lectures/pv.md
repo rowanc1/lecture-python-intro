@@ -39,8 +39,8 @@ Our main  tools in this lecture will be
   * matrix multiplication,  and
   * matrix inversion.
 
-We'll use the calculations described here in  subsequent lectures, including {doc}`consumption smoothing <cons_smooth>`, {doc}`equalizing difference model <equalizing_difference>`, and
-{doc}`monetarist theory of price levels <cagan_ree>`.
+We'll use the calculations described here in  subsequent lectures, including [consumption smoothing](cons_smooth.md), [equalizing difference model](equalizing_difference.md), and
+[monetarist theory of price levels](cagan_ree.md).
 
 Let's dive in.
 
@@ -82,9 +82,9 @@ A system of equations like {eq}`eq:Euler1` is an example of a linear  **differen
 There are powerful mathematical  methods available for solving such systems and they are well worth
 studying in their own right, being the foundation for the analysis of many interesting economic models.  
 
-For an example, see {doc}`Samuelson multiplier-accelerator <dynam:samuelson>`
+For an example, see [Samuelson multiplier-accelerator](dynam:samuelson)
 
-In this lecture, we'll  solve system {eq}`eq:Euler1` using matrix multiplication and matrix inversion, basic tools from linear algebra introduced in  {doc}`linear equations and matrix algebra <linear_equations>`.
+In this lecture, we'll  solve system {eq}`eq:Euler1` using matrix multiplication and matrix inversion, basic tools from linear algebra introduced in  [linear equations and matrix algebra](linear_equations.md).
 
 We will use the following imports
 

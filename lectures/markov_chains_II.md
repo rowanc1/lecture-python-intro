@@ -26,8 +26,7 @@ In addition to what's in Anaconda, this lecture will need the following librarie
 
 ## Overview
 
-This lecture continues on from our {doc}`earlier lecture on Markov chains
-<markov_chains_I>`.
+This lecture continues on from our [earlier lecture on Markov chains](markov_chains_I.md).
 
 
 Specifically, we will introduce the concepts of irreducibility and ergodicity, and see how they connect to stationarity.
@@ -142,7 +141,7 @@ We'll come back to this a bit later.
 
 ### Irreducibility and stationarity
 
-We discussed uniqueness of stationary distributions in our earlier lecture {doc}`markov_chains_I`.
+We discussed uniqueness of stationary distributions in our earlier lecture [](markov_chains_I.md).
 
 There we {prf:ref}`stated <mc_po_conv_thm>` that uniqueness holds when the transition matrix is everywhere positive.
 
@@ -196,7 +195,7 @@ This gives us another way to interpret the stationary distribution (provided irr
 
 Importantly, the result is valid for any choice of $\psi_0$.
 
-The theorem is related to {doc}`the law of large numbers <lln_clt>`.
+The theorem is related to [the law of large numbers](lln_clt.md).
 
 It tells us that, in some settings, the law of large numbers sometimes holds even when the
 sequence of random variables is [not IID](iid_violation).

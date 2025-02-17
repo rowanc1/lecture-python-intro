@@ -11,8 +11,6 @@ kernelspec:
   name: python3
 ---
 
-+++ {"user_expressions": []}
-
 (eigen)=
 # Eigenvalues and Eigenvectors 
 
@@ -34,7 +32,7 @@ At the same time, these concepts are extremely useful for
 In this lecture we explain the basics of eigenvalues and eigenvectors and introduce the Neumann Series Lemma.
 
 We assume in this lecture that students are familiar with matrices
- and understand {doc}`the basics of matrix algebra<linear_equations>`.
+ and understand [the basics of matrix algebra](linear_equations.md).
 
 We will use the following imports:
 
@@ -166,8 +164,6 @@ ax.text(0.8, 0.8, f'θ', fontsize=14)
 plt.show()
 ```
 
-+++ {"user_expressions": []}
-
 One way to understand this transformation is that $A$ 
 
 * first rotates $x$ by some angle $\theta$ and
@@ -282,8 +278,6 @@ def circle_transform(A=np.array([[-1, 2], [0, 1]])):
     plt.show()
 ```
 
-+++ {"user_expressions": []}
-
 ### Scaling
 
 A matrix of the form 
@@ -307,8 +301,6 @@ grid_transform(A)
 circle_transform(A)
 ```
 
-+++ {"user_expressions": []}
-
 ### Shearing
 
 A "shear" matrix of the form 
@@ -329,8 +321,6 @@ A = np.array([[1, 2],     # shear along x-axis
 grid_transform(A)
 circle_transform(A)
 ```
-
-+++ {"user_expressions": []}
 
 ### Rotation
 
@@ -353,8 +343,6 @@ A = np.array([[np.cos(θ), np.sin(θ)],
 grid_transform(A)
 ```
 
-+++ {"user_expressions": []}
-
 ### Permutation
 
 The permutation matrix 
@@ -371,8 +359,6 @@ interchanges the coordinates of a vector.
 A = np.column_stack([[0, 1], [1, 0]])
 grid_transform(A)
 ```
-
-+++ {"user_expressions": []}
 
 More examples of common transition matrices can be found [here](https://en.wikipedia.org/wiki/Transformation_matrix#Examples_in_2_dimensions).
 
@@ -562,23 +548,17 @@ B = np.array([[1, 2],     # shear along x-axis
               [0, 1]])
 ```
 
-+++ {"user_expressions": []}
-
 #### Shear then rotate
 
 ```{code-cell} ipython3
 grid_composition_transform(A, B)  # transformation AB
 ```
 
-+++ {"user_expressions": []}
-
 #### Rotate then shear
 
 ```{code-cell} ipython3
 grid_composition_transform(B,A)         # transformation BA
 ```
-
-+++ {"user_expressions": []}
 
 It is evident that the transformation $AB$ is not the same as the transformation $BA$.
 
@@ -656,8 +636,6 @@ n = 12
 plot_series(A, v, n)
 ```
 
-+++ {"user_expressions": []}
-
 Here with each iteration the vectors get shorter, i.e., move closer to the origin.
 
 In this case, repeatedly multiplying a vector by $A$ makes the vector "spiral in".
@@ -671,8 +649,6 @@ n = 12
 
 plot_series(B, v, n)
 ```
-
-+++ {"user_expressions": []}
 
 Here with each iteration vectors do not tend to get longer or shorter. 
 
@@ -688,8 +664,6 @@ n = 6
 
 plot_series(B, v, n)
 ```
-
-+++ {"user_expressions": []}
 
 Here with each iteration vectors tend to get longer, i.e., farther from the
 origin. 
@@ -778,8 +752,6 @@ for v in evecs:
 plt.show()
 ```
 
-+++ {"user_expressions": []}
-
 ### Complex values
 
 So far our definition of eigenvalues and eigenvectors seems straightforward.
@@ -844,8 +816,6 @@ evals  # eigenvalues
 evecs  # eigenvectors
 ```
 
-+++ {"user_expressions": []}
-
 Note that the *columns* of `evecs` are the eigenvectors.
 
 Since any scalar multiple of an eigenvector is an eigenvector with the same
@@ -907,8 +877,7 @@ What guarantees the existence of a unique vector $x^{*}$ that satisfies
 The following is a fundamental result in functional analysis that generalizes
 {eq}`gp_sum` to a multivariate case.
 
-(neumann_series_lemma)=
-```{prf:Theorem} Neumann Series Lemma
+```{prf:theorem} Neumann Series Lemma
 :label: neumann_series_lemma
 
 Let $A$ be a square matrix and let $A^k$ be the $k$-th power of $A$.
@@ -997,12 +966,9 @@ Here is one solution.
 We start by looking into the distance between the eigenvector approximation and the true eigenvector.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Power iteration
-    name: pow-dist
----
+:label: pow-dist
+:caption: Power iteration
+
 # Define a matrix A
 A = np.array([[1, 0, 3],
               [0, 2, 0],
@@ -1043,17 +1009,12 @@ plt.ylabel('error')
 _ = plt.plot(errors)
 ```
 
-+++ {"user_expressions": []}
-
 Then we can look at the trajectory of the eigenvector approximation.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Power iteration trajectory
-    name: pow-trajectory
----
+:label: pow-trajectory
+:caption: Power iteration trajectory
+
 # Set up the figure and axis for 3D plot
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -1083,8 +1044,6 @@ ax.set_box_aspect(aspect=None, zoom=0.8)
 
 plt.show()
 ```
-
-+++ {"user_expressions": []}
 
 ```{solution-end}
 ```
@@ -1119,8 +1078,6 @@ print(f'eigenvectors:\n {eigenvectors}')
 plot_series(A, v, n)
 ```
 
-+++ {"user_expressions": []}
-
 The result seems to converge to the eigenvector of $A$ with the largest eigenvalue.
 
 Let's use a [vector field](https://en.wikipedia.org/wiki/Vector_field) to visualize the transformation brought by A.
@@ -1128,12 +1085,9 @@ Let's use a [vector field](https://en.wikipedia.org/wiki/Vector_field) to visual
 (This is a more advanced topic in linear algebra, please step ahead if you are comfortable with the math.)
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Convergence towards eigenvectors
-    name: eigen-conv
----
+:label: eigen-conv
+:caption: Convergence towards eigenvectors
+
 # Create a grid of points
 x, y = np.meshgrid(np.linspace(-5, 5, 15),
                    np.linspace(-5, 5, 20))
@@ -1170,8 +1124,6 @@ plt.gca().set_aspect('equal', adjustable='box')
 plt.show()
 ```
 
-+++ {"user_expressions": []}
-
 Note that the vector field converges to the eigenvector of $A$ with the largest eigenvalue and diverges from the eigenvector of $A$ with the smallest eigenvalue.
 
 In fact, the eigenvectors are also the directions in which the matrix $A$ stretches or shrinks the space.
@@ -1200,12 +1152,9 @@ Use the visualization in the previous exercise to explain the trajectory of the 
 Here is one solution
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Vector fields of the three matrices
-    name: vector-field
----
+:label: vector-field
+:caption: Vector fields of the three matrices
+
 figure, ax = plt.subplots(1, 3, figsize=(15, 5))
 A = np.array([[sqrt(3) + 1, -2],
               [1, sqrt(3) - 1]])
@@ -1267,8 +1216,6 @@ for i, example in enumerate(examples):
 plt.show()
 ```
 
-+++ {"user_expressions": []}
-
 The vector fields explain why we observed the trajectories of the vector $v$ multiplied by $A$ iteratively before.
 
 The pattern demonstrated here is because we have complex eigenvalues and eigenvectors.
@@ -1276,12 +1223,9 @@ The pattern demonstrated here is because we have complex eigenvalues and eigenve
 We can plot the complex plane for one of the matrices using `Arrow3D` class retrieved from [stackoverflow](https://stackoverflow.com/questions/22867620/putting-arrowheads-on-vectors-in-a-3d-plot).
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: 3D plot of the vector field
-    name: 3d-vector-field
----
+:label: 3d-vector-field
+:caption: 3D plot of the vector field
+
 class Arrow3D(FancyArrowPatch):
     def __init__(self, xs, ys, zs, *args, **kwargs):
         super().__init__((0, 0), (0, 0), *args, **kwargs)
@@ -1337,8 +1281,6 @@ ax.set_box_aspect(aspect=None, zoom=0.8)
 plt.draw()
 plt.show()
 ```
-
-+++ {"user_expressions": []}
 
 ```{solution-end}
 ```

@@ -29,7 +29,7 @@ Some of those theories about monetary and fiscal policies still interest us toda
 
    * this normative (i.e., prescriptive model) advises a government to finance temporary war-time surges in expenditures mostly by issuing government debt, raising taxes by just enough to service the additional debt issued during the wary; then,   after the war,  to roll over whatever debt the government had accumulated during the war;  and  to increase taxes after the war permanently by just enough to finance interest payments on that post-war government  debt
 
-*  **unpleasant monetarist arithmetic** like that described in this quanteon lecture  {doc}`unpleasant`
+*  **unpleasant monetarist arithmetic** like that described in this quanteon lecture  [](unpleasant.md)
    
     * mathematics involving compound interest  governed French government debt dynamics in the decades preceding 1789; according to leading historians, that arithmetic set the stage for the French Revolution 
 
@@ -44,7 +44,7 @@ Some of those theories about monetary and fiscal policies still interest us toda
   
     * Napoleon Bonaparte became head of the French government in 1799. He  used this theory to guide his monetary and fiscal policies
 
-* a classical **inflation-tax** theory of inflation in which Philip Cagan's ({cite}`Cagan`) demand for money studied in this lecture  {doc}`cagan_ree` is a key component
+* a classical **inflation-tax** theory of inflation in which Philip Cagan's ({cite}`Cagan`) demand for money studied in this lecture  [](cagan_ree.md) is a key component
 
    * This theory helps  explain French price level and money supply data from 1794 to 1797  
 
@@ -93,12 +93,9 @@ These graphs show that during the 18th century
 
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Military Spending in Britain and France"
-    name: fr_fig4
----
+:label: fr_fig4
+:caption: Military Spending in Britain and France
+
 # Read the data from Excel file
 data2 = pd.read_excel(dette_url, 
         sheet_name='Militspe', usecols='M:X', 
@@ -142,12 +139,9 @@ A remarkable aspect of figure {numref}`fr_fig4` is that despite having a populat
 This testifies to Britain's  having created state institutions that could sustain high  tax collections, government spending , and government borrowing. See  {cite}`north1989`. 
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Government Expenditures and Tax Revenues in Britain"
-    name: fr_fig2
----
+:label: fr_fig2
+:caption: Government Expenditures and Tax Revenues in Britain
+
 
 # Read the data from Excel file
 data2 = pd.read_excel(dette_url, sheet_name='Militspe', usecols='M:X', 
@@ -221,12 +215,9 @@ A striking feature of the graph is what we'll label a *law of gravity* between t
 Next we'll plot data on debt service costs as fractions of government revenues in Great Britain and France during the 18th century.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Ratio of debt service to taxes, Britain and France"
-    name: fr_fig1
----
+:label: fr_fig1
+:caption: Ratio of debt service to taxes, Britain and France
+
 
 # Read the data from the Excel file
 data1 = pd.read_excel(dette_url, sheet_name='Debt', 
@@ -275,12 +266,9 @@ data1.replace(0, np.nan, inplace=True)
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Government Spending and Tax Revenues in France"
-    name: fr_fig3
----
+:label: fr_fig3
+:caption: Government Spending and Tax Revenues in France
+
 # Plot the data
 plt.figure()
 
@@ -311,7 +299,7 @@ plt.show()
 Especially during and after France's expenditures to help the Americans in their War of Independence from Great Britain,   growing government debt service (i.e., interest payments) 
 contributed to this situation. 
 
-This was partly a consequence of the unfolding of the debt dynamics that underlies the Unpleasant Arithmetic discussed in this quantecon lecture  {doc}`unpleasant`.  
+This was partly a consequence of the unfolding of the debt dynamics that underlies the Unpleasant Arithmetic discussed in this quantecon lecture  [](unpleasant.md).  
 
 
 {cite}`sargent_velde1995` describe how the Ancient Regime that until 1788 had  governed France  had stable institutional features that made it difficult for the government to balance its budget.
@@ -427,12 +415,9 @@ As a consequence of these tax reforms, government tax revenues declined
 The next figure shows this
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Index of real per capital revenues, France"
-    name: fr_fig5
----
+:label: fr_fig5
+:caption: Index of real per capital revenues, France
+
 # Read data from Excel file
 data5 = pd.read_excel(dette_url, sheet_name='Debt', usecols='K', 
                     skiprows=41, nrows=120, header=None)
@@ -463,12 +448,9 @@ And as the next figure shows, government expenditures exceeded tax revenues by s
 amounts during the period form 1789 to 1799.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Spending (blue) and Revenues (orange), (real values)"
-    name: fr_fig11
----
+:label: fr_fig11
+:caption: Spending (blue) and Revenues (orange), (real values)
+
 # Read data from Excel file
 data11 = pd.read_excel(assignat_url, sheet_name='Budgets',
         usecols='J:K', skiprows=22, nrows=52, header=None)
@@ -509,12 +491,9 @@ The next figure shows that by printing money, they were able to finance substant
 of goods and services, including military goods and soldiers' pay.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Revenues raised by printing paper money notes"
-    name: fr_fig24
----
+:label: fr_fig24
+:caption: Revenues raised by printing paper money notes
+
 # Read data from Excel file
 data12 = pd.read_excel(assignat_url, sheet_name='seignor', 
          usecols='F', skiprows=6, nrows=75, header=None).squeeze()
@@ -572,12 +551,9 @@ The next figure shows the price level in France  during the time that the Revolu
 Note that we use a log scale because the price level rose so much.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Price Level and Price of Gold (log scale)"
-    name: fr_fig9
----
+:label: fr_fig9
+:caption: Price Level and Price of Gold (log scale)
+
 # Read the data from Excel file
 data7 = pd.read_excel(assignat_url, sheet_name='Data', 
           usecols='P:Q', skiprows=4, nrows=80, header=None)
@@ -641,12 +617,9 @@ statements about government note issues, each of which finds its conditions more
 nearly met in one of these episodes than in the other two.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Real balances of assignats (in gold and goods)"
-    name: fr_fig8
----
+:label: fr_fig8
+:caption: Real balances of assignats (in gold and goods)
+
 # Read the data from Excel file
 data7 = pd.read_excel(assignat_url, sheet_name='Data', 
         usecols='P:Q', skiprows=4, nrows=80, header=None)
@@ -733,12 +706,9 @@ a3_rev, b3_rev = fit(infl[44:63], bal[44:63])
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Inflation and Real Balances"
-    name: fr_fig104
----
+:label: fr_fig104
+:caption: Inflation and Real Balances
+
 plt.figure()
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
@@ -788,12 +758,9 @@ a3_rev, b3_rev = fit(infl[44:63], bal[44:63])
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Inflation and Real Balances"
-    name: fr_fig104b
----
+:label: fr_fig104b
+:caption: Inflation and Real Balances
+
 plt.figure()
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
@@ -819,12 +786,9 @@ Now let's regress inflation on real balances during the *real bills* period and 
 line.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Inflation and Real Balances"
-    name: fr_fig104c
----
+:label: fr_fig104c
+:caption: Inflation and Real Balances
+
 plt.figure()
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
@@ -864,12 +828,9 @@ Now let's regress real balances on inflation  during the terror  and plot the re
 line.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Inflation and Real Balances"
-    name: fr_fig104d
----
+:label: fr_fig104d
+:caption: Inflation and Real Balances
+
 plt.figure()
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
@@ -909,12 +870,9 @@ Both show a prounced inverse relationship that is the hallmark of the hyperinfla
 Cagan {cite}`Cagan`.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Inflation and Real Balances"
-    name: fr_fig104e
----
+:label: fr_fig104e
+:caption: Inflation and Real Balances
+
 plt.figure()
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
@@ -943,12 +901,9 @@ plt.show()
 period of the hyperinflation.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: "Inflation and Real Balances"
-    name: fr_fig104f
----
+:label: fr_fig104f
+:caption: Inflation and Real Balances
+
 plt.figure()
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
@@ -991,6 +946,6 @@ In 1799, Napoleon Bonaparte became first consul and for the next 15 years used r
 
 This lecture  sets the stage for studying  theories of inflation and the  government monetary and fiscal policies that bring it about.
 
-A  *monetarist theory of the price level* is described in this quantecon lecture {doc}`cagan_ree`.
+A  *monetarist theory of the price level* is described in this quantecon lecture [](cagan_ree.md).
 
-That lecture sets the stage for these quantecon lectures {doc}`money_inflation` and {doc}`unpleasant`.  
+That lecture sets the stage for these quantecon lectures [](money_inflation.md) and [](unpleasant.md).  

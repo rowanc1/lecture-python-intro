@@ -15,7 +15,7 @@ kernelspec:
 
 ## Overview
 
-This lecture extends and modifies the model in this lecture {doc}`cagan_ree` by modifying the
+This lecture extends and modifies the model in this lecture [](cagan_ree.md) by modifying the
 law of motion that governed the supply of money.  
 
 The model in this lecture consists of two components
@@ -40,7 +40,7 @@ These equations take the form of what is often called vector linear **difference
 In this lecture, we'll roll up our sleeves and solve those equations in two different ways.
 
 
-(One of the methods for solving vector linear  difference equations will take advantage of a decomposition of a matrix that is studied in this lecture {doc}`eigen_I`.)
+(One of the methods for solving vector linear  difference equations will take advantage of a decomposition of a matrix that is studied in this lecture [](eigen_I.md).)
 
 In this lecture we will encounter these concepts from macroeconomics:
 
@@ -49,9 +49,9 @@ In this lecture we will encounter these concepts from macroeconomics:
 * perverse dynamics under rational expectations in which the system converges to the higher stationary inflation tax rate
 * a peculiar comparative stationary-state outcome connected with that stationary inflation rate: it asserts that inflation can be *reduced* by running *higher*  government deficits, i.e., by raising more resources by printing money. 
 
-The same qualitative outcomes prevail in this lecture {doc}`money_inflation_nonlinear` that studies a nonlinear version of the model in this lecture.  
+The same qualitative outcomes prevail in this lecture [](money_inflation_nonlinear.md) that studies a nonlinear version of the model in this lecture.  
 
-These outcomes  set the stage for the analysis to be presented in this lecture {doc}`laffer_adaptive` that studies a nonlinear version of the present model; it   assumes a version of "adaptive expectations" instead of rational expectations.
+These outcomes  set the stage for the analysis to be presented in this lecture [](laffer_adaptive.md) that studies a nonlinear version of the present model; it   assumes a version of "adaptive expectations" instead of rational expectations.
 
 That lecture will show that 
 
@@ -59,7 +59,7 @@ That lecture will show that
 * it reverses the perverse dynamics by making the *lower* stationary inflation rate the one to which the system typically converges
 * a more plausible comparative dynamic outcome emerges in which now inflation can be *reduced* by running *lower*  government deficits
 
-This outcome will be used to justify a selection of a stationary inflation rate that underlies the analysis of unpleasant monetarist arithmetic to be studied in this lecture {doc}`unpleasant`.
+This outcome will be used to justify a selection of a stationary inflation rate that underlies the analysis of unpleasant monetarist arithmetic to be studied in this lecture [](unpleasant.md).
 
 We'll use these tools from linear algebra:
 
@@ -311,13 +311,10 @@ They satisfy $R_\ell < R_u$ and are affiliated with a higher inflation tax rate 
 inflation tax rate $1 - R_u$.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Steady state revenue from inflation tax as function of steady state gross return on currency (solid blue curve) and  real government expenditures (dotted red line) plotted against steady-state rate of return currency
-    name: infl_tax
-    width: 500px
----
+:label: infl_tax
+:caption: Steady state revenue from inflation tax as function of steady state gross return on currency (solid blue curve) and  real government expenditures (dotted red line) plotted against steady-state rate of return currency
+:width: 500px
+
 # Generate values for R
 R_values = np.linspace(msm.γ2/msm.γ1, 1, 250)
 
@@ -548,14 +545,10 @@ Let's plot  distinct outcomes  associated with several  $R_0 \in [\frac{\gamma_2
 Each line below shows a path associated with a different $R_0$.
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Paths of $R_t$ (top panel) and $b_t$ (bottom panel) starting from different
-      initial condition $R_0$
-    name: R0_path
-    width: 500px
----
+:label: R0_path
+:caption: Paths of $R_t$ (top panel) and $b_t$ (bottom panel) starting from different initial condition $R_0$
+:width: 500px
+
 # Create a grid of R_0s
 R0s = np.linspace(msm.γ2/msm.γ1, msm.R_u, 9)
 R0s = np.append(msm.R_l, R0s)
@@ -921,15 +914,10 @@ def draw_iterations(p0s, model, line_params, num_steps):
 ```
 
 ```{code-cell} ipython3
----
-mystnb:
-  figure:
-    caption: Starting from different initial values of  $p_0$, paths of $m_t$ (top
-      panel, log scale for $m$), $p_t$ (middle panel, log scale for $m$), $R_t$ (bottom
-      panel)
-    name: p0_path
-    width: 500px
----
+:label: p0_path
+:caption: Starting from different initial values of  $p_0$, paths of $m_t$ (top panel, log scale for $m$), $p_t$ (middle panel, log scale for $m$), $R_t$ (bottom panel)
+:width: 500px
+
 p0s = [p0_bar, 2.34, 2.5, 3, 4, 7, 30, 100_000]
 
 draw_iterations(p0s, msm, line_params, num_steps=20)
@@ -958,7 +946,7 @@ Those dynamics are "perverse" not only in the sense that they imply that the mon
 
 
 ```{note}
-The same qualitative outcomes prevail in this lecture {doc}`money_inflation_nonlinear` that studies a nonlinear version of the model in this lecture.
+The same qualitative outcomes prevail in this lecture [](money_inflation_nonlinear.md) that studies a nonlinear version of the model in this lecture.
 ```
 
 
@@ -981,6 +969,6 @@ We discovered that
 
 On grounds of plausibility, we recommend following many macroeconomists in selecting the unique equilibrium that converges to the lower stationary inflation tax rate. 
 
-As we shall see, we shall accept this recommendation in  lecture {doc}`unpleasant`.
+As we shall see, we shall accept this recommendation in  lecture [](unpleasant.md).
 
-In lecture, {doc}`laffer_adaptive`, we shall explore how  {cite}`bruno1990seigniorage` and others justified this in other ways.
+In lecture, [](laffer_adaptive.md), we shall explore how  {cite}`bruno1990seigniorage` and others justified this in other ways.
