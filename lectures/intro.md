@@ -1,4 +1,5 @@
 ---
+title: A First Course in Quantitative Economics with Python
 jupytext:
   text_representation:
     extension: .md
@@ -8,8 +9,6 @@ kernelspec:
   language: python
   name: python3
 ---
-
-# A First Course in Quantitative Economics with Python
 
 This lecture series provides an introduction to quantitative economics using Python. 
 

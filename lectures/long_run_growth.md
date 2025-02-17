@@ -1,4 +1,13 @@
 ---
+exports:
+  - format: pdf
+    template: plain_latex_book
+    output: exports/long_run_growth.pdf
+downloads:
+  - file: exports/long_run_growth.pdf
+    title: Lecture (PDF)
+  - file: ./long_run_growth.md
+    title: Notebook (md)
 jupytext:
   text_representation:
     extension: .md
