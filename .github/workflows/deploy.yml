@@ -42,7 +42,7 @@ jobs:
           auto-activate-base: true
           miniconda-version: 'latest'
           python-version: '3.12'
-          environment-file: environment.yml
+          environment-file: environment-exp.yml
           activate-environment: quantecon
       - name: Install MyST Markdown
         run: npm install -g mystmd
