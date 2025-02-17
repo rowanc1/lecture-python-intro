@@ -313,7 +313,6 @@ inflation tax rate $1 - R_u$.
 ```{code-cell} ipython3
 :label: infl_tax
 :caption: Steady state revenue from inflation tax as function of steady state gross return on currency (solid blue curve) and  real government expenditures (dotted red line) plotted against steady-state rate of return currency
-:width: 500px
 
 # Generate values for R
 R_values = np.linspace(msm.γ2/msm.γ1, 1, 250)
@@ -547,7 +546,6 @@ Each line below shows a path associated with a different $R_0$.
 ```{code-cell} ipython3
 :label: R0_path
 :caption: Paths of $R_t$ (top panel) and $b_t$ (bottom panel) starting from different initial condition $R_0$
-:width: 500px
 
 # Create a grid of R_0s
 R0s = np.linspace(msm.γ2/msm.γ1, msm.R_u, 9)
@@ -916,7 +914,6 @@ def draw_iterations(p0s, model, line_params, num_steps):
 ```{code-cell} ipython3
 :label: p0_path
 :caption: Starting from different initial values of  $p_0$, paths of $m_t$ (top panel, log scale for $m$), $p_t$ (middle panel, log scale for $m$), $R_t$ (bottom panel)
-:width: 500px
 
 p0s = [p0_bar, 2.34, 2.5, 3, 4, 7, 30, 100_000]
 

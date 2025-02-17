@@ -162,7 +162,6 @@ The following figure plots the steady state Laffer curve together with the two s
 ```{code-cell} ipython3
 :label: laffer_curve_nonlinear
 :caption: Seigniorage as function of steady state inflation. The dashed brown lines indicate $\pi_l$ and $\pi_u$.
-:width: 500px
 
 
 def compute_seign(x, α):
@@ -387,7 +386,6 @@ def draw_iterations(p0s, model, line_params, p0_bars, num_steps):
 ```{code-cell} ipython3
 :label: p0_path_nonlin
 :caption: Starting from different initial values of $p_0$, paths of $m_t$ (top panel, log scale for $m$), $p_t$ (second panel, log scale for $p$),  $\pi_t$ (third panel), and $\mu_t$ (bottom panel)
-:width: 500px
 
 
 # Generate a sequence from p0_l to p0_u

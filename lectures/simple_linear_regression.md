@@ -380,8 +380,8 @@ Let's consider two economic variables GDP per capita and Life Expectancy.
 
 **Q2:** Gather some data [from our world in data](https://ourworldindata.org)
 
-:::{raw} html
-<iframe src="https://ourworldindata.org/grapher/life-expectancy-vs-gdp-per-capita" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"></iframe>
+:::{iframe} https://ourworldindata.org/grapher/life-expectancy-vs-gdp-per-capita
+:width: 100%
 :::
 
 You can download {download}`a copy of the data here <https://github.com/QuantEcon/lecture-python-intro/raw/main/lectures/_static/lecture_specific/simple_linear_regression/life-expectancy-vs-gdp-per-capita.csv>` if you get stuck

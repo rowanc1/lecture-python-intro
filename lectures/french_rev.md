@@ -601,9 +601,9 @@ We interpret
 these three episodes in terms of distinct  theories
 
 *  a *backing* or *real bills* theory (the classic text for this theory is  Adam Smith  {cite}`smith2010wealth`)
-* a legal restrictions theory ( {cite}`keynes1940pay`, {cite}`bryant1984price` )
+* a legal restrictions theory ({cite}`keynes1940pay`, {cite}`bryant1984price`)
 * a classical hyperinflation theory ({cite}`Cagan`)
-* 
+
 ```{note}
 According to the empirical  definition of hyperinflation adopted by {cite}`Cagan`,
 beginning in the month that inflation exceeds 50 percent
