@@ -35,15 +35,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.x
-      - name: Setup Anaconda
-        uses: conda-incubator/setup-miniconda@v3
+      - name: Install Python
+        uses: actions/setup-python@v5
         with:
-          auto-update-conda: true
-          auto-activate-base: true
-          miniconda-version: 'latest'
           python-version: '3.12'
-          environment-file: environment-exp.yml
-          activate-environment: quantecon
+          cache: 'pip'
+          cache-dependency-path: '.github/requirements/requirements-execute.txt'
+      - name: Install execution requirements for ipykernel and jupyter-server
+        run: python -m pip install -r .github/requirements/requirements-execute.txt
+        shell: bash
       - name: Install MyST Markdown
         run: npm install -g mystmd
       - name: Build HTML Assets
