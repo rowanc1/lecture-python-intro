@@ -8,10 +8,7 @@ project:
       url: https://johnstachurski.net
   bibliography:
     - _static/quant-econ.bib
-  exports:
-    - format: pdf
-      template: plain_latex_book
-      output: exports/quantecon-python-intro.pdf
+  github: https://github.com/QuantEcon/lecture-python-intro
   toc:
     - file: intro.md
     - title: Introduction
@@ -106,6 +103,7 @@ project:
     CHN: China
     GDP: Gross Domestic Products
     CLT: central limit theorem
+    GFC: Global Financial Crisis
   numbering:
     headings: true
     figure:
@@ -116,6 +114,10 @@ project:
   error_rules:
     - rule: reference-syntax-valid
       severity: ignore
+  exports:
+    - format: typst
+      template: https://github.com/rowanc1/typst-book.git
+      output: exports/quantecon-python-intro.pdf
 site:
   options:
     logo: _static/qe-logo.png
